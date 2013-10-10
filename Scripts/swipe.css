@@ -1,0 +1,34 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+body {
+  -webkit-text-size-adjust:none;
+  font-family:sans-serif;
+}
+small {
+  margin:0 10px 30px;
+  display:block;
+  font-size:12px;
+}
+.swipe {
+  padding-bottom:0px;
+  position:relative;
+  z-index:1;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+.swipe li div, .swipe div div div {
+  margin:0 0px;
+  padding:0px 0px;
+  background:transparent;
+  font-weight:bold;
+  color:#fff;
+  font-size:20px;
+  text-align:center;
+}

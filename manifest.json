@@ -1,0 +1,23 @@
+{
+  "name": "grrd's Puzzle",
+  "version": "4.0",
+  "manifest_version": 2,
+  "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures.",
+  "icons": {
+    "256": "Images/icon_256.png",
+    "128": "Images/icon_128.png",
+    "64": "Images/icon_64.png",
+    "48": "Images/icon_48.png",
+    "32": "Images/icon_32.png",
+    "16": "Images/icon_16.png"
+  },
+  "app": {
+    "urls": [
+      "http://homepage.hispeed.ch/grrds_games/Puzzle/"
+    ],
+    "launch": {
+      "web_url": "http://homepage.hispeed.ch/grrds_games/Puzzle/"
+    }
+  },
+  "author": "Gerard Tyedmers"
+}

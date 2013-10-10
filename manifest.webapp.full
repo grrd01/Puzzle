@@ -1,0 +1,40 @@
+{
+  "name": "grrd's Puzzle",
+  "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures.",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/Images/icon_16.png",
+    "32": "/Images/icon_32.png",
+    "48": "/Images/icon_48.png",
+    "60": "/Images/icon_60.png",
+    "64": "/Images/icon_64.png",
+    "128": "/Images/icon_128.png",
+    "256": "/Images/icon_256.png"
+  },
+  "developer": {
+    "name": "grrd's Games",
+    "url": "http://homepage.hispeed.ch/grrds_games/"
+  },
+  "default_locale": "en",
+  "fullscreen": "true",
+  "appcache_path": "/Puzzle.manifest",
+ 
+  "locales": {
+    "en": {
+      "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures."
+    },
+    "de": {
+      "description": "grrd's Puzzle ist ein HTML5 Puzzle Spiel. Wähle dein Motiv aus den vorhandenen Bildern oder spiele mit deinen eigenen Photos im Schwierigkeitsgrad deiner Wahl."
+    },
+    "fr": {
+      "description": "grrd's Puzzle est un jeu en HTML5. Choisissez un sujet inclus ou jouez avec vos propres images à la difficulté de votre choix."
+    },
+    "es": {
+      "description": "grrd’s Puzzle es un juego de rompecabezas. Usted puede elegir entre varias imágenes o jugar con sus propias imágenes."
+    },
+    "it": {
+      "description": "grrd’s Puzzle è un gioco di puzzle. È possibile scegliere tra diverse immagini o giocare con la propria foto."
+    }
+  }
+ 
+}

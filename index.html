@@ -1,0 +1,217 @@
+<!DOCTYPE html> 
+<!--
+ * grrd's Puzzle
+ * Copyright (c) 2012 Gerard Tyedmers, grrd@gmx.net
+ * Licensed under the MPL License
+-->
+<html> <!--html manifest="Puzzle.manifest"--> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" >
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" >
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="Scripts/jquery.mobile-1.3.2.min.css" />
+		<link rel='stylesheet' href='Scripts/swipe.css' />
+		<style>canvas {border: 0px;margin:0;padding:0;};</style>
+		<style> .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {display: block; padding: 0.9em 75px 0.9em 15px;}
+					div.ui-slider-switch {position: absolute; right: 0; width: 20%;} </style>
+		<link rel="apple-touch-icon" type="image/x-icon" href="Images/apple-touch-icon-57x57.png" >
+		<link rel="apple-touch-icon" sizes="72x72" href="Images/apple-touch-icon-72x72.png" >
+		<link rel="apple-touch-icon" sizes="114x114" href="Images/apple-touch-icon-114x114.png" >
+		<link rel="apple-touch-startup-image" href="Images/apple-touch-startup-image-320x460.png" >
+		<link rel="apple-touch-startup-image" sizes="768x1004" href="Images/apple-touch-startup-image-768x1004.png" >
+		<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" >
+		<title>grrd's Puzzle</title> 
+	</head>
+
+	<body> 
+
+		<audio id="click_sound" preload="auto" autobuffer="autobuffer">
+			<source src="Sounds/click.mp3" type="audio/mp3" />
+			<source src="Sounds/click.mp3" type="audio/mpeg" />
+			<source src="Sounds/click.ogg" type="audio/ogg" />
+		</audio>
+		<audio id="ding_sound" preload="auto" autobuffer="autobuffer">
+			<source src="Sounds/ding.mp3" type="audio/mp3" />
+			<source src="Sounds/ding.mp3" type="audio/mpeg" />
+			<source src="Sounds/ding.ogg" type="audio/ogg" />
+		</audio>
+
+		<div data-role="page" id="title" data-theme="a">
+
+			<div data-role="content">
+
+				<img id="img_title" src="Images/title1.png" alt="grrd's Puzzle  is a HTML5 jigsaw puzzle game for your smartphone or desktop. You can choose from various images or play with your own pictures at the level of difficulty of your choice." style="height: 100px;" />
+				<div data-role="controlgroup" data-type="horizontal" style="float:right;">
+					<a href="#popupInfo"  data-role="button" data-rel="dialog" data-transition="pop" style="padding:-20px; height: 35px;width: 55px;"><img src="Images/info.png" alt="about" style="margin-top:-5px;margin-left:-10px;height: 25px;width: 25px;"/></a>
+					<a href="#popupSettings" data-role="button" data-rel="dialog" data-transition="pop" style="padding:-20px;height: 35px;width: 55px;"><img src="Images/settings.png" alt="settings" style="margin-top:-5px;margin-left:-10px;height: 25px;width: 25px;"/></a>
+				</div>
+
+				<div id='image_slider' class='swipe' style="width:100%;">
+					<div>
+						<div style='display:none'>
+							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;text-align:center;">
+								<input type="radio" name="image-set-0" id="image-set-0" value="1" checked="checked"/>
+										<label id="radio0-1" for="image-set-0"><img id="image0" src="Images/info.png" alt="play with your own image"/></label>
+							</fieldset>
+						</div>
+						<div style='display:block'>
+							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+								<input type="radio" name="image-set-1" id="image-set-1-1" value="1" checked="checked"/>
+										<label id="radio1-1" for="image-set-1-1"><img id="image1-1" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-1" id="image-set-1-2" value="2"  />
+										<label id="radio1-2" for="image-set-1-2"><img id="image1-2" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-1" id="image-set-1-3" value="3"  />
+										<label id="radio1-3" for="image-set-1-3"><img id="image1-3" style="width:100%;" alt=""/></label>
+							</fieldset>
+						</div>
+						<div style='display:none'>
+							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+								<input type="radio" name="image-set-2" id="image-set-2-1" value="1" checked="checked"/>
+										<label id="radio2-1" for="image-set-2-1"><img id="image2-1" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-2" id="image-set-2-2" value="2"  />
+										<label id="radio2-2" for="image-set-2-2"><img id="image2-2" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-2" id="image-set-2-3" value="3"  />
+										<label id="radio2-3" for="image-set-2-3"><img id="image2-3" style="width:100%;" alt=""/></label>
+							</fieldset>
+						</div>
+						<div style='display:none'>
+							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+								<input type="radio" name="image-set-3" id="image-set-3-1" value="1" checked="checked"/>
+										<label id="radio3-1" for="image-set-3-1"><img id="image3-1" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-3" id="image-set-3-2" value="2"  />
+										<label id="radio3-2" for="image-set-3-2"><img id="image3-2" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-3" id="image-set-3-3" value="3"  />
+										<label id="radio3-3" for="image-set-3-3"><img id="image3-3" style="width:100%;" alt=""/></label>
+							</fieldset>
+						</div>
+						<div style='display:none'>
+							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+								<input type="radio" name="image-set-4" id="image-set-4-1" value="1" checked="checked"/>
+										<label id="radio4-1" for="image-set-4-1"><img id="image4-1" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-4" id="image-set-4-2" value="2"  />
+										<label id="radio4-2" for="image-set-4-2"><img id="image4-2" style="width:100%;" alt=""/></label>
+								<input type="radio" name="image-set-4" id="image-set-4-3" value="3"  />
+										<label id="radio4-3" for="image-set-4-3"><img id="image4-3" style="width:100%;" alt=""/></label>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div style="text-align:center;">
+					<a id="bprev" data-role="button" style="float:left;" href='#' onclick='image_slider.prev();slide();return false;' data-mini="true"><img src="Images/prev.png" alt="prev"/></a>
+					<img id="bullets0" src="Images/bulletso0.png" alt=""/>
+					<img id="bullets1" src="Images/bullets1.png" alt=""/>
+					<img id="bullets2" src="Images/bullets0.png" alt=""/>
+					<img id="bullets3" src="Images/bullets0.png" alt=""/>
+					<img id="bullets4" src="Images/bullets0.png" alt=""/>					
+					<a id="bnext" data-role="button" style="float:right;" href='#' onclick='image_slider.next();slide();return false;' data-mini="true"><img src="Images/next.png" alt="next"/></a>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal" style="width:100%;">
+					<a id="bteasy" href="#" onclick="easy_click(); return false;" data-role="button" data-mini="true"><img src="Images/easy.png" alt="Easy" style="padding:1px;height: 60px;"/></a>
+					<a id="btmed" href="#" onclick="medium_click(); return false;" data-role="button" data-mini="true"><img src="Images/medium.png" alt="Medium" style="padding:1px;height: 60px;"/></a>
+					<a id="bthard" href="#" onclick="hard_click(); return false;" data-role="button" data-mini="true"><img src="Images/hard.png" alt="Hard" style="padding:1px;height: 60px;"/></a>
+				</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+		<div data-role="page" id="container" data-theme="a" style="margin:0px;padding:0px;">
+		</div><!-- /page -->
+
+		<div data-role="page" id="popupSettings">
+
+			<div data-role="header" data-theme="a" style="text-align:center;">
+				<img src="Images/title_wide.png" alt="grrd's Puzzle" style="width:50%;margin-top:8px; margin-bottom:6px" /> 
+			</div>
+			<div data-role="content" data-theme="d">
+				<h4 class="ui-title">Choose Theme</h4>
+				<select name="select_theme" id="select_theme">
+					<option value="europe">Europe</option>
+					<option value="asia">Asia</option>
+					<option value="america">America</option>
+					<option value="mascha">Mascha</option>
+					<!--option value="shrek">Shrek!</option-->
+				</select>
+				
+				<div id="b_titimageinput">
+				<h4 class="ui-title">Choose Image</h4>				
+				<input type="file" id="b_imageinput" accept="image/*">
+				</div>
+
+				<h3 class="ui-title">Settings</h3>
+				
+				<div data-role="fieldcontain">
+					<label for="b_sound" style="display:inline;">Play sounds</label>
+					<select name="b_sound" id="b_sound" data-role="slider">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="b_rotate" style="display:inline;">Tap to twist</label>
+					<select name="b_rotate" id="b_rotate" data-role="slider">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="b_backg_image" style="display:inline;">Image in background</label>
+					<select name="b_backg_image" id="b_backg_image" data-role="slider">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">
+					 <label for="b_backg_grid" style="display:inline;">Grid in background</label>
+					 <select name="b_backg_grid" id="b_backg_grid" data-role="slider">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+					 </select>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="b_elastic" style="display:inline;">Smooth animations<br></label>
+					<select name="b_elastic" id="b_elastic" data-role="slider">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain" id="s_shape">
+					<label for="b_shape" style="display:inline;">Use real jigsaw shapes</label>
+					<select name="b_shape" id="b_shape" data-role="slider">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+					</select>
+				</div>
+				<br>
+				<a href="#" data-rel="back" data-role="button" data-theme="c" data-icon="check">OK</a>
+			</div>
+		</div>
+
+		<!-- Start of 4th page: #popupInfo -->
+		<div data-role="page" id="popupInfo">
+			<div data-role="header" data-theme="a" style="text-align:center;">
+				<img src="Images/title_wide.png" alt="grrd's Puzzle" style="width:50%;margin-top:8px; margin-bottom:6px" />      
+			</div>
+			<div data-role="content" data-theme="d">
+				<p>Thanks for playing grrd's Puzzle. If you like it, share the link! </p><br>
+				<p>Developed by Gérard Tyedmers with <a href="http://jquerymobile.com/" target="_blank">jQuery mobile</a>, <a href="http://kineticjs.com/" target="_blank">kinetics.js</a>, <a href="http://swipejs.com/" target="_blank">swipe.js</a> and <a href="http://www.nihilogic.dk/labs/exif/" target="_blank">exif.js</a>. </p>
+				<p>Change your device between vertical and horizontal orientation for different images.</p><br>
+				<p>E-mail me: <a href="mailto:grrd@gmx.net">grrd@gmx.net </a></p>
+				<p>Try my other game: <a href="http://homepage.hispeed.ch/grrds_games/4inaRow" target="_blank">grrd's 4 in a Row</a></p>
+			</div>
+		</div><!-- /page popup -->
+
+		<div data-role="page" id="dummy" style="display:none;">
+			<img id="g_imageObj" alt="" />
+		</div>
+
+		<script type="text/javascript" src="Scripts/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="Scripts/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src="Scripts/kinetic-v4.7.2.min.js"></script>
+		<script type="text/javascript" src='Scripts/swipe.js'></script>
+		<script type="text/javascript" src='Scripts/binaryajax.js'></script>
+		<script type="text/javascript" src='Scripts/exif.js'></script>
+		<script type="text/javascript" src="Scripts/puzzle.js"></script>
+
+	</body>
+</html>

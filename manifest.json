@@ -1,8 +1,9 @@
 {
   "name": "grrd's Puzzle",
-  "version": "4.0",
+  "version": "4.1",
   "manifest_version": 2,
   "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures.",
+  "short_name": "Puzzle",
   "icons": {
     "256": "Images/icon_256.png",
     "128": "Images/icon_128.png",

@@ -1,4 +1,0 @@
-Puzzle
-======
-
-grrd's Puzzle

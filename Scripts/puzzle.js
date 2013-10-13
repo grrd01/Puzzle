@@ -31,9 +31,9 @@ var g_genauigkeit = 15 ;
 var g_gesetzt = 0;
 var g_buildpuzzle = false;
 var g_ready = false;
-var g_rotate = true;
-var g_elastic = true;
-var g_shape = false;
+var g_rotate = false;
+var g_elastic = false;
+var g_shape = true;
 var g_backg_grid = true;
 var g_backg_image = true;
 var g_sound = true;
@@ -104,16 +104,12 @@ function load_puzzle(){"use strict";
 	if ($('#b_backg_image').val()==="on") {g_backg_image=true;} else {g_backg_image=false;}
 	if ($('#b_rotate').val()==="on") {g_rotate=true;} else {g_rotate=false;}
 	if ($('#b_sound').val()==="on") {g_sound=true;} else {g_sound=false;}
-	if ($('#b_elastic').val()==="on") {g_elastic=true;} else {g_elastic=false;}
-	if ($('#b_shape').val()==="on") {g_shape=true;} else {g_shape=false;}
 
 	if(navigator.sayswho.indexOf("MSIE") < 0) {
 		localStorage.setItem('s_backg_grid', $('#b_backg_grid').val());
 		localStorage.setItem('s_backg_image', $('#b_backg_image').val());
 		localStorage.setItem('s_rotate', $('#b_rotate').val());
 		localStorage.setItem('s_sound', $('#b_sound').val());
-		localStorage.setItem('s_elastic', $('#b_elastic').val());
-		localStorage.setItem('s_shape', $('#b_shape').val());
 	}
 
 	document.getElementById("container").width = g_windowswidth;
@@ -897,19 +893,16 @@ $('#image-set-0').click(function(){"use strict";
 		alert("Your browser does not support to play with your own images. Please use a modern browser like Chrome or Firefox.");
 		return;
 	}
+	// for FirefoxOS
 	if(b_imageinput.type !== 'file') {
 		// Web Activities are not standard _yet_, so they use the Moz prefix.
-		// We'll make sure they exist before using them, anyway
 		if(window.MozActivity) {
 			var activity = new MozActivity({
 				name: 'pick',
 				data: {type: 'image/jpeg'}
 			});
 			activity.onsuccess = function() {
-				g_ownimage = this.result.blob;
-				//var bin = atob(g_ownimage.split(',')[1]);
-				//var exif = EXIF.readFromBinaryFile(new BinaryFile(bin));
-				//g_own_orientation = exif.Orientation;
+				g_ownimage = window.URL.createObjectURL(this.result.blob);
 				$("#image0").attr("src",g_ownimage);
 				content_formatting();
 				setTimeout(function() {content_formatting();},500);					
@@ -918,6 +911,7 @@ $('#image-set-0').click(function(){"use strict";
 				// oh no!
 			}
 		}
+		// any other OS
 	} else {
 		b_imageinput.click();
 	}
@@ -948,16 +942,12 @@ window.onload = function() {"use strict";
 			$('#b_backg_image').val("on");
 			$('#b_rotate').val("off");
 			$('#b_sound').val("on");
-			$('#b_elastic').val("off");
-			$('#b_shape').val("on");
 		} else {
 			//localStorage.clear();
 			if (localStorage.getItem('s_backg_grid') === null)  {$('#b_backg_grid').val("on");}  else {$('#b_backg_grid').val(localStorage.getItem('s_backg_grid'));}
 			if (localStorage.getItem('s_backg_image') === null) {$('#b_backg_image').val("on");} else {$('#b_backg_image').val(localStorage.getItem('s_backg_image'));}
 			if (localStorage.getItem('s_rotate') === null)      {$('#b_rotate').val("off");}     else {$('#b_rotate').val(localStorage.getItem('s_rotate'));}
 			if (localStorage.getItem('s_sound') === null)       {$('#b_sound').val("on");}       else {$('#b_sound').val(localStorage.getItem('s_sound'));}
-			if (localStorage.getItem('s_elastic') === null)     {$('#b_elastic').val("off");}    else {$('#b_elastic').val(localStorage.getItem('s_elastic'));}
-			if (localStorage.getItem('s_shape') === null)       {$('#b_shape').val("on");}       else {$('#b_shape').val(localStorage.getItem('s_shape'));}
 	
 			if (localStorage.getItem('s_theme') === null)       {$('#select_theme').val("Mascha");} else {$('#select_theme').val(localStorage.getItem('s_theme'));}
 		}
@@ -974,7 +964,6 @@ window.onload = function() {"use strict";
 			$("#b_imageinput").attr("style","display:none;");
 			$("#b_titimageinput").attr("style","display:none;");
 		}
-		$("#s_shape").attr("style","display:none;");
 		content_formatting();
 		setTimeout(function() {content_formatting();},500);
 	}

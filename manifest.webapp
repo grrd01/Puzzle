@@ -20,19 +20,25 @@
  
   "locales": {
     "en": {
-      "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures."
+      "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures. Various levels of difficulty offer hours of fun for every age. Change your device between vertical and horizontal orientation for different images. grrd's Puzzle is free, no ads, no in-app purchases."
     },
     "de": {
-      "description": "grrd's Puzzle ist ein HTML5 Puzzle Spiel. Wähle dein Motiv aus den vorhandenen Bildern oder spiele mit deinen eigenen Photos im Schwierigkeitsgrad deiner Wahl."
+      "description": "grrd's Puzzle ist ein klassisches Puzzlespiel. <br>Neben verschiedenen Motiven kann auch mit eigenen Bildern gespielt werden. Dank wählbarem Schwierigkeitsgrad gibt's stundenlangen Spielspass für jedes Alter. Drehen Sie ihr Gerät vom Hoch- ins Querformat für andere Bilder. <br>grrd’s Puzzle ist gratis, keine Werbung, keine In-App Käufe."
     },
     "fr": {
-      "description": "grrd's Puzzle est un jeu en HTML5. Choisissez un sujet inclus ou jouez avec vos propres images à la difficulté de votre choix."
+      "description": "grrd's Puzzle est un jeu de puzzle classique. Vous pouvez choisir parmi différentes images incluses ou jouer avec vos propres photos. Grâce au fait que vous pouvez choisir le degré de difficulté, chaque âge s'amuse pendant des heures. Tournez votre portable de la verticale à l'horizontale pour des images différentes. grrd's Puzzle est gratuit, ni publicité, ni des achats in-app."
     },
     "es": {
-      "description": "grrd’s Puzzle es un juego de rompecabezas. Usted puede elegir entre varias imágenes o jugar con sus propias imágenes."
+      "description": "Grrd's puzzle es un rompecabezas clásico. Aparte de las imágenes integradas, Vd también puede jugar con sus propias fotos. Gracias al nivel de dificultad seleccionable, cada edad se divierte durante horas. Girar su dispositivo de la vertical a la horizontal para obtener diferentes imágenes. grrd's Puzzle es gratis, sin anuncios, sin compras in-app."
     },
     "it": {
-      "description": "grrd’s Puzzle è un gioco di puzzle. È possibile scegliere tra diverse immagini o giocare con la propria foto."
+      "description": "grrd’s Puzzle è un gioco di puzzle. È possibile scegliere tra diverse immagini o giocare con la propria foto. Vari livelli di difficoltà offrono ore di divertimento per ogni età. Cambiare il dispositivo tra orientamento verticale e orizzontale per immagini diverse. grrd's Puzzle è gratuito, senza pubblicità, senza in-app acquisti."
+    },
+    "pt": {
+      "description": "grrd’s Puzzle é um jogo de quebra-cabeça. Você pode escolher entre várias imagens ou jogar com suas próprias imagens. Vários níveis de dificuldade oferecem horas de diversão para todas as idades. Alterar o dispositivo entre a orientação vertical e horizontal para imagens diferentes. grrd's Puzzle é livre, sem anúncios, sem compras in-app."
+    },
+    "pl": {
+      "description": "grrd’s Puzzle jest gra puzzle. Możesz wybierać spośród różnych zdjęć lub grać z własnymi zdjęciami. Różne poziomy trudności oferują godzin zabawy dla każdego wieku. Zmień swoje urządzenie między orientacją pionową i poziomą dla różnych obrazów. grrd's Puzzle jest wolny, bez reklam, bez in-app zakupów."
     }
   }
  

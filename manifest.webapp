@@ -1,15 +1,22 @@
 {
   "name": "grrd's Puzzle",
   "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures. Various levels of difficulty offer hours of fun for every age. Change your device between vertical and horizontal orientation for different images. grrd's Puzzle is free, no ads, no in-app purchases.",
+<<<<<<< HEAD
   "launch_path": "/index.html",
+=======
+  "version": "1.1",
+  "launch_path": "/Puzzle/index.html",
+>>>>>>> Puzzle 4.1: Localized, Level Tricky
   "icons": {
-    "16": "/Images/icon_16.png",
-    "32": "/Images/icon_32.png",
-    "48": "/Images/icon_48.png",
-    "60": "/Images/icon_60.png",
-    "64": "/Images/icon_64.png",
-    "128": "/Images/icon_128.png",
-    "256": "/Images/icon_256.png"
+    "16": "/Puzzle/Images/icon_16.png",
+    "32": "/Puzzle/Images/icon_32.png",
+    "48": "/Puzzle/Images/icon_48.png",
+    "60": "/Puzzle/Images/icon_60.png",
+    "64": "/Puzzle/Images/icon_64.png",
+    "90": "/Puzzle/Images/icon_90.png",
+    "120": "/Puzzle/Images/icon_120.png",
+    "128": "/Puzzle/Images/icon_128.png",
+    "256": "/Puzzle/Images/icon_256.png"
   },
   "developer": {
     "name": "grrd's Games",
@@ -17,6 +24,7 @@
   },
   "default_locale": "en",
   "fullscreen": "true",
+  "appcache_path": "/Puzzle/Puzzle.manifest",
  
   "locales": {
     "en": {

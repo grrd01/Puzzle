@@ -1,15 +1,18 @@
 {
   "name": "grrd's Puzzle",
-  "version": "4.0",
+  "version": "4.2",
   "manifest_version": 2,
-  "description": "grrd’s Puzzle is a jigsaw puzzle game. You can choose from various images or play with your own pictures.",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "short_name": "Puzzle",
   "icons": {
-    "256": "Images/icon_256.png",
-    "128": "Images/icon_128.png",
-    "64": "Images/icon_64.png",
-    "48": "Images/icon_48.png",
-    "32": "Images/icon_32.png",
-    "16": "Images/icon_16.png"
+    "256": "Images/g_icon_256.png",
+    "128": "Images/g_icon_128.png",
+    "64": "Images/g_icon_64.png",
+	"60": "Images/g_icon_60.png",
+    "48": "Images/g_icon_48.png",
+    "32": "Images/g_icon_32.png",
+    "16": "Images/g_icon_16.png"
   },
   "app": {
     "urls": [

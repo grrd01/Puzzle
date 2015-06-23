@@ -1029,7 +1029,7 @@ function set_theme(theme) {
 	$select_theme_img.attr("style","width:60px; float:left;"); // to ensure repaint on ios
 }
 
-$( "#b_gold" ).on( "change", function () { set_gold($b_gold.val()) });
+$b_gold.on( "change", function () { set_gold($b_gold.val()) });
 
 function set_gold(gold) {
 	$b_gold.val(gold);

@@ -64,7 +64,7 @@
 			<div data-role="content">
 
 				<img id="img_title" src="Images/title1.png" alt="grrd's Puzzle is a HTML5 jigsaw puzzle game for your smartphone or desktop. You can choose from various images or play with your own pictures at the level of difficulty of your choice." style="height: 100px;" />
-				<div data-role="controlgroup" data-type="horizontal" style="float:right;">
+				<div class="fr" data-role="controlgroup" data-type="horizontal">
 					<a href="#popupInfo" class="bt_small" data-role="button" data-rel="dialog" data-transition="pop"><img class="bt_small" src="Images/info.png" alt="about"/></a>
 					<a href="#popupSettings" class="bt_small" data-role="button" data-rel="dialog" data-transition="pop"><img class="bt_small" src="Images/settings.png" alt="settings"/></a>
 				</div>
@@ -72,17 +72,17 @@
 
 				<a href="#" onclick="set_theme('flowers');$('#popupNewTheme').popup('close');return false;" id="popupNewTheme" data-role="popup" data-theme="a" style="width:310px;height:80px;display:block;text-decoration:none;color:white" >
 					<img src="Images/flowers/theme.png" style="width:60px; float:left;padding:10px;" alt="flowers">
-					<p data-l10n-id="lbnewtheme" style="padding-top:7px;">new theme available:</p>
-					<p data-l10n-id="lbflowers" style="padding-top:0">Flowers</p>
+					<p class="pt7" data-l10n-id="lbnewtheme">new theme available:</p>
+					<p class="pt0" data-l10n-id="lbflowers">Flowers</p>
 				</a>
 
 				<!--a href="#popupSettings" id="popupNewTheme" data-role="popup" data-rel="dialog" data-transition="pop" data-theme="a" style="width:310px;height:80px;display:block;text-decoration:none;color:white" >
 					<img src="Images/piecegold.png" alt="gold piece" style="width:50px; float:left;padding:10px;">
-					<p data-l10n-id="lbnew" style="padding-top:7px;">new level available:</p>
-					<p data-l10n-id="lbgold" style="padding-top:0px">Gold Mode</p>
+					<p class="pt7" data-l10n-id="lbnew">new level available:</p>
+					<p class="pt0" data-l10n-id="lbgold">Gold Mode</p>
 				</a-->
 
-				<div id='image_slider' class='swipe' style="width:100%;">
+				<div id='image_slider' class='swipe w100'>
 					<div id="slider_container">
 						<div style='display:none'>
 							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;text-align:center;">
@@ -91,57 +91,57 @@
 							</fieldset>
 						</div>
 						<div style='display:block'>
-							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+							<fieldset data-role="controlgroup" data-type="horizontal" class="w100">
 								<input type="radio" name="image-set-1" id="image-set-1-1" value="1" checked="checked"/>
-									<label id="radio1-1" for="image-set-1-1"><img id="image1-1" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio1-1" for="image-set-1-1"><img id="image1-1" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-1" id="image-set-1-2" value="2" />
-									<label id="radio1-2" for="image-set-1-2"><img id="image1-2" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio1-2" for="image-set-1-2"><img id="image1-2" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-1" id="image-set-1-3" value="3" />
-									<label id="radio1-3" for="image-set-1-3"><img id="image1-3" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio1-3" for="image-set-1-3"><img id="image1-3" src="Images/dummy.png" class="w100" alt=""/></label>
 							</fieldset>
 						</div>
 						<div style='display:none'>
-							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+							<fieldset data-role="controlgroup" data-type="horizontal" class="w100">
 								<input type="radio" name="image-set-2" id="image-set-2-1" value="1" checked="checked"/>
-									<label id="radio2-1" for="image-set-2-1"><img id="image2-1" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio2-1" for="image-set-2-1"><img id="image2-1" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-2" id="image-set-2-2" value="2" />
-									<label id="radio2-2" for="image-set-2-2"><img id="image2-2" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio2-2" for="image-set-2-2"><img id="image2-2" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-2" id="image-set-2-3" value="3" />
-									<label id="radio2-3" for="image-set-2-3"><img id="image2-3" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio2-3" for="image-set-2-3"><img id="image2-3" src="Images/dummy.png" class="w100" alt=""/></label>
 							</fieldset>
 						</div>
 						<div style='display:none'>
-							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+							<fieldset data-role="controlgroup" data-type="horizontal" class="w100">
 								<input type="radio" name="image-set-3" id="image-set-3-1" value="1" checked="checked"/>
-									<label id="radio3-1" for="image-set-3-1"><img id="image3-1" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio3-1" for="image-set-3-1"><img id="image3-1" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-3" id="image-set-3-2" value="2" />
-									<label id="radio3-2" for="image-set-3-2"><img id="image3-2" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio3-2" for="image-set-3-2"><img id="image3-2" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-3" id="image-set-3-3" value="3" />
-									<label id="radio3-3" for="image-set-3-3"><img id="image3-3" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio3-3" for="image-set-3-3"><img id="image3-3" src="Images/dummy.png" class="w100" alt=""/></label>
 							</fieldset>
 						</div>
 						<div style='display:none'>
-							<fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
+							<fieldset data-role="controlgroup" data-type="horizontal" class="w100">
 								<input type="radio" name="image-set-4" id="image-set-4-1" value="1" checked="checked"/>
-									<label id="radio4-1" for="image-set-4-1"><img id="image4-1" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio4-1" for="image-set-4-1"><img id="image4-1" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-4" id="image-set-4-2" value="2" />
-									<label id="radio4-2" for="image-set-4-2"><img id="image4-2" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio4-2" for="image-set-4-2"><img id="image4-2" src="Images/dummy.png" class="w100" alt=""/></label>
 								<input type="radio" name="image-set-4" id="image-set-4-3" value="3" />
-									<label id="radio4-3" for="image-set-4-3"><img id="image4-3" src="Images/dummy.png" style="width:100%;" alt=""/></label>
+									<label id="radio4-3" for="image-set-4-3"><img id="image4-3" src="Images/dummy.png" class="w100" alt=""/></label>
 							</fieldset>
 						</div>
 					</div>
 				</div>
-				<div style="text-align:center;">
-					<a id="bprev" data-role="button" style="float:left;" href='#' onclick='g_image_slider.prev();slide();return false;' data-mini="true"><img src="Images/prev.png" alt="prev"/></a>
+				<div class="tc">
+					<a id="bprev" class="fl" data-role="button" href='#' onclick='g_image_slider.prev();slide();return false;' data-mini="true"><img src="Images/prev.png" alt="prev"/></a>
 					<img id="bullets0" src="Images/bulletso0.png" alt=""/>
 					<img id="bullets1" src="Images/bullets1.png" alt=""/>
 					<img id="bullets2" src="Images/bullets0.png" alt=""/>
 					<img id="bullets3" src="Images/bullets0.png" alt=""/>
 					<img id="bullets4" src="Images/bullets0.png" alt=""/>
-					<a id="bnext" data-role="button" style="float:right;" href='#' onclick='g_image_slider.next();slide();return false;' data-mini="true"><img src="Images/next.png" alt="next"/></a>
+					<a id="bnext" class="fr" data-role="button" href='#' onclick='g_image_slider.next();slide();return false;' data-mini="true"><img src="Images/next.png" alt="next"/></a>
 				</div>
-				<div data-role="controlgroup" data-type="horizontal" style="width:100%;">
+				<div data-role="controlgroup" data-type="horizontal" class="w100">
 					<a id="bteasy" href="#" onclick="easy_click(); return false;" data-role="button" data-mini="true"><img id="imgeasy" src="Images/easy.png" alt="Easy" style="padding:1px;height: 60px;"/></a>
 					<a id="btmed" href="#" onclick="medium_click(); return false;" data-role="button" data-mini="true"><img id="imgmed" src="Images/medium.png" alt="Medium" style="padding:1px;height: 60px;"/></a>
 					<a id="bthard" href="#" onclick="hard_click(); return false;" data-role="button" data-mini="true"><img id="imghard" src="Images/hard.png" alt="Hard" style="padding:1px;height: 60px;"/></a>
@@ -155,7 +155,7 @@
 		</div><!-- /page game -->
 		
 		<div data-role="page" id="popupSettings">
-			<div data-role="header" data-theme="a" style="text-align:center;">
+			<div class="tc" data-role="header" data-theme="a">
 				<img class="popup" src="Images/title_wide.png" alt="grrd's Puzzle"/>
 			</div>
 			<div data-role="content" data-theme="d">
@@ -168,37 +168,37 @@
 					<ul data-role="listview" data-theme="a">
 						<li><a href="#" onclick="set_theme('europe');$('#popupTheme').popup('close');return false;">
 							<img src="Images/europe/theme.png" alt="europe">
-							<h2 data-l10n-id="lbeurope" style="padding-top:10px;">Europe</h2>
+							<h2 data-l10n-id="lbeurope" class="pt10">Europe</h2>
 							</a>
 						</li>
 						<li><a href="#" onclick="set_theme('asia');$('#popupTheme').popup('close');return false;">
 							<img src="Images/asia/theme.png" alt="asia">
-							<h2 data-l10n-id="lbasia" style="padding-top:10px;">Asia</h2>
+							<h2 data-l10n-id="lbasia" class="pt10">Asia</h2>
 							</a>
 						</li>
 						<li><a href="#" onclick="set_theme('america');$('#popupTheme').popup('close');return false;">
 							<img src="Images/america/theme.png" alt="america">
-							<h2 data-l10n-id="lbamerica" style="padding-top:10px;">America</h2></a>
+							<h2 data-l10n-id="lbamerica" class="pt10">America</h2></a>
 						</li>
 						<li><a href="#" onclick="set_theme('animals');$('#popupTheme').popup('close');return false;">
 							<img src="Images/animals/theme.png" alt="animals">
-							<h2 data-l10n-id="lbanimals" style="padding-top:10px;">Animals</h2></a>
+							<h2 data-l10n-id="lbanimals" class="pt10">Animals</h2></a>
 						</li>
 						<li><a href="#" onclick="set_theme('flowers');$('#popupTheme').popup('close');return false;">
 							<img src="Images/flowers/theme.png" alt="flowers">
-							<h2 data-l10n-id="lbflowers" style="padding-top:10px;">Flowers</h2></a>
+							<h2 data-l10n-id="lbflowers" class="pt10">Flowers</h2></a>
 						</li>
 						<li><a href="#" onclick="set_theme('tricky');$('#popupTheme').popup('close');return false;">
 							<img src="Images/tricky/theme.png" alt="tricky">
-							<h2 data-l10n-id="lbtricky" style="padding-top:10px;">Tricky</h2></a>
+							<h2 data-l10n-id="lbtricky" class="pt10">Tricky</h2></a>
 						</li>
 						<!--li><a href="#" onclick="set_theme('mascha');$('#popupTheme').popup('close');return false;">
 							<img src="Images/mascha/theme.png" alt="mascha">
-							<h2 data-l10n-id="lbmascha" style="padding-top:10px;">Masha</h2></a>
+							<h2 data-l10n-id="lbmascha" class="pt10">Masha</h2></a>
 						</li-->
 						<!--li><a href="#" onclick="set_theme('shrek');$('#popupTheme').popup('close');return false;">
 							<img src="Images/shrek/theme.png" alt="shrek">
-							<h2 data-l10n-id="lbshrek" style="padding-top:10px;">Shrek</h2></a>
+							<h2 data-l10n-id="lbshrek" class="pt10">Shrek</h2></a>
 						</li-->
 					</ul>
 				</div>
@@ -252,7 +252,7 @@
 
 		<!-- Start of 4th page: #popupInfo -->
 		<div data-role="page" id="popupInfo">
-			<div data-role="header" data-theme="a" style="text-align:center;">
+			<div class="tc" data-role="header" data-theme="a">
 				<img class="popup" src="Images/title_wide.png" alt="grrd's Puzzle"/>
 			</div>
 			<div data-role="content" data-theme="d">
@@ -264,7 +264,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2" style="padding-top:10px;"><span data-l10n-id="lbdev">Developed by Gérard Tyedmers with </span>
+						<td colspan="2" class="pt10"><span data-l10n-id="lbdev">Developed by Gérard Tyedmers with </span>
 							<a href="http://jquerymobile.com/" target="_blank">jQuery mobile</a>,
 							<a href="http://kineticjs.com/" target="_blank">kinetics.js</a>,
 							<a href="https://github.com/thebird/swipe" target="_blank">swipe.js</a>

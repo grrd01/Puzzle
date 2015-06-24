@@ -6,6 +6,7 @@
 
 "use strict";
 
+(function() {
 var g_canvasSupported = !!window.HTMLCanvasElement;
 if (!g_canvasSupported) {alert("Your browser does not support HTML5. Please use a modern browser like Chrome or Firefox.");}
 
@@ -17,7 +18,7 @@ var g_stage = new Kinetic.Stage({
 		height: document.getElementById("container").height
 	});
 var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
-var firefoxOS = (!!"mozApps" in navigator && navigator.userAgent.search("Mobile") != -1);
+//var firefoxOS = (!!"mozApps" in navigator && navigator.userAgent.search("Mobile") != -1);
 var url_param;
 var g_lang_ready = false;
 var g_theme;
@@ -57,6 +58,15 @@ var $b_rotate = $('#b_rotate');
 var $b_sound = $('#b_sound');
 var $container = $('#container');
 var $b_gold = $('#b_gold');
+var $bprev = $("#bprev");
+var $bnext = $("#bnext");
+var $bteasy = $("#bteasy");
+var $btmed = $("#btmed");
+var $bthard = $("#bthard");
+var $btclose = $("#btclose");
+var $b_imageinput = $("#b_imageinput");
+var $popupTheme = $("#popupTheme");
+var $popupNewTheme = $("#popupNewTheme");
 
 var g_startX;
 var g_startY;
@@ -131,8 +141,9 @@ function hard_click() {
 }
 
 function load_puzzle(){
+    var l_img = $('input:radio[name=image-set-'+g_image_slider.getPos()+']:checked').val();
 	if (g_buildpuzzle){return;}
-	if (typeof $('input:radio[name=image-set-'+g_image_slider.getPos()+']:checked').val() === "undefined") {
+	if (typeof l_img === "undefined") {
 		alert(navigator.mozL10n.get("lbchoose"));
 		return;
 	}
@@ -160,7 +171,7 @@ function load_puzzle(){
 	g_canvasheight = g_windowsheight-4;
 	g_canvaswidth = g_windowswidth;
 	if (g_image_slider.getPos()!==0) {
-		g_imagepath = "Images/"+g_theme+"/image-set-"+g_image_slider.getPos()+"/sujet"+g_portrait+$('input:radio[name=image-set-'+g_image_slider.getPos()+']:checked').val()+".jpg";
+		g_imagepath = "Images/"+g_theme+"/image-set-"+g_image_slider.getPos()+"/sujet"+g_portrait+l_img+".jpg";
 	} else {
 		g_imagepath = g_ownimage;
 	}
@@ -209,9 +220,9 @@ function build_puzzle(){
 	var l_temp_height = g_canvasheight;
 	
 	if (iOS) {
-		var subsampled = detectSubsampling(g_imageObj);
+		//var subsampled = detectSubsampling(g_imageObj);
 		//alert("Subsampled: " + subsampled);
-		var vertSquashRatio = detectVerticalSquash(g_imageObj, g_imageObj.naturalWidth, g_imageObj.naturalHeight);
+		var vertSquashRatio = detectVerticalSquash(g_imageObj, g_imageObj.naturalHeight);
 		//alert ("SquashRatio: " + vertSquashRatio);
 		l_temp_height = l_temp_height / vertSquashRatio;
 	}
@@ -219,10 +230,6 @@ function build_puzzle(){
 	if (g_own_orientation === 5 || g_own_orientation === 6 || g_own_orientation === 7 || g_own_orientation === 8) {
 		l_temp_width = g_canvasheight;
 		l_temp_height = g_canvaswidth;
-		//if (window.devicePixelRatio === 2) {
-		//if (iOS) {
-			//l_temp_height = l_temp_height /0.75;
-		//}
 	}
 	
 	var l_temp_image = new Kinetic.Image({
@@ -256,13 +263,7 @@ function build_puzzle(){
 			if (g_backg_grid || g_backg_image) {
 				build_background(img);
 			}
-			
 			if (g_shape) {
-				//l_temp_image.setWidth(l_temp_image.getWidth() / window.devicePixelRatio);
-				//l_temp_image.setHeight(l_temp_image.getHeight() / window.devicePixelRatio);
-				//l_temp_image.setX(l_temp_image.getX() / window.devicePixelRatio);
-				//l_temp_image.setY(l_temp_image.getY() / window.devicePixelRatio);
-
 				l_temp_image.toImage({
 					width: g_canvaswidth,
 					height: g_canvasheight,
@@ -295,7 +296,7 @@ function build_puzzle(){
  * Detect subsampling in loaded image.
  * In iOS, larger images than 2M pixels may be subsampled in rendering.
  */
-function detectSubsampling(img) {
+/*function detectSubsampling(img) {
 	var iw = img.naturalWidth, ih = img.naturalHeight;
 	if (iw * ih > 1024 * 1024) { // subsampling may happen over megapixel image
 		var canvas = document.createElement('canvas');
@@ -309,13 +310,13 @@ function detectSubsampling(img) {
 	} else {
 		return false;
 	}
-}
+}*/
 
 /**
  * Detecting vertical squash in loaded image.
  * Fixes a bug which squash image vertically while drawing into canvas for some images.
  */
-function detectVerticalSquash(img, iw, ih) {
+function detectVerticalSquash(img, ih) {
 	var canvas = document.createElement('canvas');
 	canvas.width = 1;
 	canvas.height = ih;
@@ -476,11 +477,11 @@ function draw_piece_2(piece) {
 	var trans = null;
 	var tween;
 	if (g_elastic) {
-		//piece.enableShadow();
-		piece.setShadowColor('black');
-		piece.setShadowOffset(5);
-		piece.setShadowOpacity(0.3);
-		piece.setShadowBlur(10);
+		piece.enableShadow();
+		piece.shadowColor('black');
+		piece.shadowOffset(5);
+		piece.shadowDarkness(0.3);
+		piece.shadowBlur(10);
 	}
 	piece.on("mouseover", function() {
 		if ((piece.getDraggable()||piece.getParent().getDraggable()) && g_ready) {
@@ -541,7 +542,7 @@ function draw_piece_2(piece) {
 					piece.setAttrs({
 						scale: {x: 1.05,y: 1.05}
 					});
-					piece.setShadowOffset(15);
+					piece.shadowOffset(15);
 				}
 			} else {
 				g_zindex=piece.getParent().getZIndex();
@@ -555,7 +556,7 @@ function draw_piece_2(piece) {
 					});
 					l_allpieces = piece.getParent().getChildren();
 					for(var j = 0; j < l_allpieces.length; j++) {
-						l_allpieces[j].setShadowOffset(15);
+						l_allpieces[j].shadowOffset(15);
 					}
 				}
 			}
@@ -589,7 +590,7 @@ function draw_piece_2(piece) {
 				tween.play();
 				l_allpieces = piece.getParent().getChildren();
 				for(var j = 0; j < l_allpieces.length; j++) {
-					l_allpieces[j].setShadowOffset(5);
+					l_allpieces[j].shadowOffset(5);
 				}
 				
 			} else {
@@ -619,7 +620,7 @@ function build_background(img) {
 			opacity: 0.1
 		});
 		g_backg_layer.add(l_backg_image);
-		
+
 		l_backg_image.applyFilter(Kinetic.Filters.Grayscale, null, function() {
 			g_backg_layer.draw();
 		});
@@ -734,8 +735,7 @@ function teil_setzen (piece) {
 	g_layer.draw();
 	if (g_elastic || g_shape) {
 		//piece.setShadow({color: 'rgba(0, 0, 0, 0)'});
-		//piece.disableShadow();
-		piece.setShadowOpacity(0);
+		piece.disableShadow();
 	}
 	if (g_sound) {
 		document.getElementById('click_sound').play();
@@ -744,7 +744,7 @@ function teil_setzen (piece) {
 	setTimeout(function() {
 	g_gesetzt++;
 	if (g_gesetzt === g_spalten * g_zeilen) {
-		$('#btclose').css('display', 'none');
+		$btclose.css('display', 'none');
 		if (g_sound){document.getElementById('ding_sound').play();}
 	}
 	},500);
@@ -950,7 +950,7 @@ function teil_zu_gruppe (piece,piece2, l_sollX, l_sollY) {
 }
 
 function back() {
-	$('#btclose').css('display', 'inline');
+	$btclose.css('display', 'inline');
 	$.mobile.changePage('#title', {transition: 'slide', reverse: true});
 	content_formatting();
 	setTimeout(function() {content_formatting();},500);
@@ -973,12 +973,12 @@ function handleFileSelect(evt) {
 		}
 		var reader = new FileReader();
 		// Closure to capture the file information.
-		reader.onload = (function(theFile) {
+		reader.onload = (function() {
 			return function(e) {
 				g_ownimage = e.target.result;
 				var bin = atob(g_ownimage.split(',')[1]);
 				var exif = EXIF.readFromBinaryFile(new BinaryFile(bin));
-				g_own_orientation = exif.Orientation;
+				g_own_orientation = exif.orientation;
 				$("#image0").attr("src",g_ownimage);
 				content_formatting();
 				setTimeout(function() {content_formatting();},500);
@@ -996,7 +996,7 @@ $('#image-set-0').click(function(){
 		return;
 	}
 	// for FirefoxOS
-	if(b_imageinput.type !== 'file') {
+	if($b_imageinput.attr('type') !== 'file') {
 		// Web Activities are not standard _yet_, so they use the Moz prefix.
 		if(window.MozActivity) {
 			var activity = new MozActivity({
@@ -1008,14 +1008,14 @@ $('#image-set-0').click(function(){
 				$("#image0").attr("src",g_ownimage);
 				content_formatting();
 				setTimeout(function() {content_formatting();},500);
-			}
+			};
 			activity.onerror = function() {
 				// oh no!
 			}
 		}
 		// any other OS
 	} else {
-		b_imageinput.click();
+        $b_imageinput.click();
 	}
 }).show();
 
@@ -1062,7 +1062,15 @@ window.onload = function() {
 				}
 			});
 		document.getElementById('b_imageinput').addEventListener('change', handleFileSelect, false);
-		$('#popupTheme').css({'overflow-y':'auto','min-width': '270px'});
+		$bprev.click(function(e) {g_image_slider.prev();slide(); e.preventDefault();});
+		$bnext.click(function(e) {g_image_slider.next();slide(); e.preventDefault();});
+        $bteasy.click(function(e) {easy_click(); e.preventDefault();});
+        $btmed.click(function(e) {medium_click(); e.preventDefault();});
+        $bthard.click(function(e) {hard_click(); e.preventDefault();});
+        $btclose.click(function(e) {g_ready = false; back(); e.preventDefault();});
+        $popupNewTheme.click(function(e) {set_theme('flowers');$('#popupNewTheme').popup('close'); e.preventDefault();});
+        $popupTheme.find("a").click(function(e) {set_theme(this.children[0].getAttribute('alt'));$popupTheme.popup('close'); e.preventDefault();});
+        $popupTheme.css({'overflow-y':'auto','min-width': '270px'});
 
 		if(navigator.sayswho.indexOf("MSIE") >= 0) {
 			$b_backg_grid.val("on");
@@ -1085,11 +1093,11 @@ window.onload = function() {
 			set_theme(url_param);
 		}
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-			$("#bprev").attr("style","display:none;");
-			$("#bnext").attr("style","display:none;");
+			$bprev.attr("style","display:none;");
+			$bnext.attr("style","display:none;");
 		}
 		if(! /Android/i.test(navigator.userAgent) ) {
-			$("#b_imageinput").attr("style","display:none;");
+			$b_imageinput.attr("style","display:none;");
 			$("#b_titimageinput").attr("style","display:none;");
 		}
 		content_formatting();
@@ -1109,11 +1117,11 @@ function content_formatting() {
 		$("#img_title").attr("style","max-height:" + (g_windowsheight/5) + "px;");
 		$("#image0").attr("style","height:" + (g_windowswidth/3-50)/1.5 + "px;");
 	}
-	$('#popupTheme').css('max-height', (g_windowsheight - 10) + 'px');
-	$('#popupNewTheme').css('max-width', (g_windowswidth - 10) + 'px');
-	$("#bteasy").attr("style","width:" + (g_windowswidth/3-12) + "px;");
-	$("#btmed").attr("style","width:" + (g_windowswidth/3-12) + "px;");
-	$("#bthard").attr("style","width:" + (g_windowswidth/3-12) + "px;");
+	$popupTheme.css('max-height', (g_windowsheight - 10) + 'px');
+    $popupNewTheme.css('max-width', (g_windowswidth - 10) + 'px');
+	$bteasy.attr("style","width:" + (g_windowswidth/3-12) + "px;");
+	$btmed.attr("style","width:" + (g_windowswidth/3-12) + "px;");
+	$bthard.attr("style","width:" + (g_windowswidth/3-12) + "px;");
 	for(var s = 1; s < 5; s++) {
 		for(var n = 1; n < 4; n++) {
 			$("#radio"+s+"-"+n).attr("style","width:" + (g_windowswidth/3-12) + "px;");
@@ -1155,7 +1163,7 @@ navigator.mozL10n.ready( function() {
 
 function popup_new() {
 	if (new Date("10/25/2014") > new Date() && g_theme != "flowers" && localStorage.getItem('s_new_theme') !== "flowers") {
-		$("#popupNewTheme").popup("open");
+        $popupNewTheme.popup("open");
 		//localStorage.setItem('s_new_theme', "flowers");
 		content_formatting();
 		setTimeout(function() {content_formatting();},500);
@@ -1174,3 +1182,4 @@ function url_query( query ) {
 		return false;
 	}
 }
+}());

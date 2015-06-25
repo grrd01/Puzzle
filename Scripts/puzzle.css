@@ -17,7 +17,6 @@ img.bt_diff { padding:1px;height: 60px; }
 img.popup { width:50%;margin-top:8px; margin-bottom:6px; }
 td.img { width:20%;text-align: center;vertical-align:middle; }
 td.text { width:80%;padding-left:10px;vertical-align:middle; }
-.h100 { height: 100px; }
 .p10 { padding:10px; }
 .pt0 { padding-top:0; }
 .pt7 { padding-top:7px; }
@@ -26,7 +25,6 @@ td.text { width:80%;padding-left:10px;vertical-align:middle; }
 .tc { text-align:center; }
 .fr { float:right; }
 .fl { float:left; }
-.di { display:inline; }
 .db { display:block; }
 .dn { display:none; }
 .w50 { width:50px; }

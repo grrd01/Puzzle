@@ -978,7 +978,7 @@
                     g_ownimage = e.target.result;
                     var bin = atob(g_ownimage.split(',')[1]);
                     var exif = EXIF.readFromBinaryFile(new BinaryFile(bin));
-                    g_own_orientation = exif.orientation;
+                    g_own_orientation = exif.Orientation;
                     $("#image0").attr("src",g_ownimage);
                     content_formatting();
                     setTimeout(function() {content_formatting();},500);

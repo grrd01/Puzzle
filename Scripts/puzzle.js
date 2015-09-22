@@ -648,7 +648,7 @@
     function display_puzzle(){
         var tween;
         $.mobile.hidePageLoadingMsg();
-        $.mobile.changePage('#game', {transition: 'slidefade'}); // slide broken in chrome43
+        $.mobile.changePage('#game', {transition: 'slide'});
         setTimeout(function() {
             var l_allpieces = g_layer.getChildren();
             for(var j = 0; j < l_allpieces.length; j++) {
@@ -951,7 +951,7 @@
 
     function back() {
         $btclose.css('display', 'inline');
-        $.mobile.changePage('#title', {transition: 'slidefade', reverse: true}); // slide broken in chrome43
+        $.mobile.changePage('#title', {transition: 'slide', reverse: true});
         content_formatting();
         setTimeout(function() {content_formatting();},500);
     }

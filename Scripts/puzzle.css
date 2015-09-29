@@ -6,6 +6,7 @@
 
 canvas { border: 0;margin:0;padding:0; }
 .myButton .ui-btn-inner{ padding: 0; }
+.ui-dialog .ui-header .ui-btn-icon-notext { display:none; }
 div.ui-slider-switch { position: absolute; right: 0; width: 20%; }
 div.game { margin:0;padding:0; }
 div.container { position:absolute; }

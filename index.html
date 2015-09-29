@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" >
     <meta name="apple-mobile-web-app-status-bar-style" content="black" >
-    <link rel="stylesheet" href="Scripts/jquery.mobile-1.3.2.x.min.css" />
+    <link rel="stylesheet" href="Scripts/jquery.mobile-1.3.2.min.css" />
     <link rel='stylesheet' href='Scripts/swipe.css' />
     <link rel='stylesheet' href='Scripts/puzzle.css' />
     <link rel="apple-touch-icon" type="image/x-icon" href="Images/apple-touch-icon-57x57.png" >
@@ -70,13 +70,13 @@
         </div>
 
 
-        <a href="#" id="popupNewTheme" data-role="popup" data-theme="a" class="popup" >
+        <a href="#" id="popupNewTheme" data-role="popup" data-history="false" data-theme="a" class="popup" >
             <img src="Images/flowers/theme.png" class="w60 fl p10" alt="flowers">
             <p data-l10n-id="lbnewtheme" class="pt7">new theme available:</p>
             <p data-l10n-id="lbflowers" class="pt0">Flowers</p>
         </a>
 
-        <!--a href="#popupSettings" id="popupNewTheme" data-role="popup" data-rel="dialog" data-transition="pop" data-theme="a" class="popup" >
+        <!--a href="#popupSettings" id="popupNewTheme" data-role="popup" data-history="false" data-rel="dialog" data-transition="pop" data-theme="a" class="popup" >
             <img src="Images/piecegold.png" alt="gold piece" class="w50 fl p10">
             <p data-l10n-id="lbnew" class="pt7">new level available:</p>
             <p data-l10n-id="lbgold" class="pt0">Gold Mode</p>
@@ -164,7 +164,7 @@
         <a href="#popupTheme" id="select_theme_bt" data-rel="popup" data-role="button" data-transition="pop" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="myButton">
             <img id="select_theme_img" alt="select theme" class="w60 fl" src="Images/animals/theme.png"><div id="select_theme" class="pt18">Animals</div>
         </a>
-        <div data-role="popup" id="popupTheme">
+        <div data-role="popup" id="popupTheme" data-history="false">
             <ul data-role="listview" data-theme="a">
                 <li><a href="#">
                     <img src="Images/europe/theme.png" alt="europe">
@@ -292,7 +292,7 @@
 </div>
 
 <script type="text/javascript" src="Scripts/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="Scripts/jquery.mobile-1.3.2.x.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery.mobile-1.3.2.min.js"></script>
 <script type="text/javascript" src="Scripts/kinetic-v4.7.4.min.js"></script>
 <script type="text/javascript" src='Scripts/swipe.js'></script>
 <script type="text/javascript" src='Scripts/binaryajax.js'></script>

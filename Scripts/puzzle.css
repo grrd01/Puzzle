@@ -4,33 +4,36 @@
 * Licensed under the MPL License
 */
 
-canvas { border: 0;margin:0;padding:0; }
-.myButton .ui-btn-inner{ padding: 0; }
-.ui-dialog .ui-header .ui-btn-icon-notext { display:none; }
-div.ui-slider-switch { position: absolute; right: 0; width: 20%; }
-div.game { margin:0;padding:0; }
-div.container { position:absolute; }
-a.bt_small { padding:-20px; height: 35px; width: 55px; }
-img.bt_small { margin-top:-5px;margin-left:-10px;height: 25px;width: 25px; }
-a.popup { width:310px;height:80px;display:block;text-decoration:none;color:white; }
-a.back { margin:20px;overflow:hidden;position:absolute;right:0; }
-img.bt_diff { padding:1px;height: 60px; }
-img.popup { width:50%;margin-top:8px; margin-bottom:6px; }
-td.img { width:20%;text-align: center;vertical-align:middle; }
-td.text { width:80%;padding-left:10px;vertical-align:middle; }
-.p10 { padding:10px; }
-.pt0 { padding-top:0; }
-.pt7 { padding-top:7px; }
-.pt10 { padding-top:10px; }
-.pt18 { padding-top:18px; }
-.tc { text-align:center; }
-.fr { float:right; }
-.fl { float:left; }
-.db { display:block; }
-.dn { display:none; }
-.w50 { width:50px; }
-.w60 { width:60px; }
-.w65 { width:65%; }
-.w70 { width:70%; }
-.w80 { width:80%; }
-.w100 { width:100%; }
+canvas {border: 0; margin: 0; padding: 0;}
+.myButton .ui-btn-inner{padding: 0;}
+.ui-dialog .ui-header .ui-btn-icon-notext {display: none;}
+div.ui-slider-switch {position: absolute; right: 0; width: 20%;}
+div.game {margin: 0; padding: 0;}
+div.container {position: absolute;}
+a.bt_small {padding: -20px; height: 35px; width: 55px;}
+img.bt_small {margin-top: -5px; margin-left: -10px; height: 25px; width: 25px;}
+a.popup {width: 310px; height: 80px; display: block; text-decoration: none; color: white;}
+a.back {margin: 20px; overflow: hidden; position: absolute; right: 0;}
+img.bt_diff {padding: 1px; height: 60px;}
+img.popup {width: 50%; margin-top: 8px; margin-bottom: 6px;}
+td.img {width: 20%; text-align: center; vertical-align: middle;}
+td.text {width: 80%; padding-left: 10px; vertical-align: middle;}
+.p10 {padding: 10px;}
+.pt0 {padding-top: 0;}
+.pt7 {padding-top: 7px;}
+.pt10 {padding-top: 10px;}
+.pt18 {padding-top: 18px;}
+.tc {text-align: center;}
+.fr {float: right;}
+.fl {float: left;}
+.db {display: block;}
+.dn {display: none;}
+.w50 {width: 50px;}
+.w60 {width: 60px;}
+.w65 {width: 65%;}
+.w70 {width: 70%;}
+.w80 {width: 80%;}
+.w100 {width: 100%;}
+.medal {position: absolute; right: 5px; bottom: -5px; width: 20%; min-width: 25px;}
+.lock {position: absolute; left: 25%; bottom:10px; width: 50%; min-width: 25px;}
+.locked {opacity: 0.3;}

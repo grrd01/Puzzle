@@ -10,9 +10,6 @@
 (function () {
     "use strict";
     var g_canvas_supported = !!window.HTMLCanvasElement;
-    if (!g_canvas_supported) {
-        alert("Your browser does not support HTML5. Please use a modern browser like Chrome or Firefox.");
-    }
 
     var g_layer = new Kinetic.Layer({name: "g_layer"});
     var g_back_g_layer = new Kinetic.Layer({name: "g_back_g_layer"});
@@ -100,25 +97,15 @@
         }
     }());
 
-    /**
-     * Detect sub-sampling in loaded image.
-     * In iOS, larger images than 2M pixels may be sub-sampled in rendering.
-     */
-    /*function detectSubSampling(img) {
-     var iw = img.naturalWidth, ih = img.naturalHeight;
-     if (iw * ih > 1024 * 1024) { // sub-sampling may happen over mega-pixel image
-     var canvas = document.createElement("canvas");
-     canvas.width = canvas.height = 1;
-     var ctx = canvas.getContext("2d");
-     ctx.drawImage(img, -iw + 1, 0);
-     // sub-sampled image becomes half smaller in rendering size.
-     // check alpha channel value to confirm image is covering edge pixel or not.
-     // if alpha value is 0 image is not covering, hence sub-sampled.
-     return ctx.getImageData(0, 0, 1, 1).data[3] === 0;
-     } else {
-     return false;
-     }
-     }*/
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+            navigator.serviceWorker.register("sw.js").then(function (registration) {
+                console.log("ServiceWorker registration successful with scope: ", registration.scope);
+            }, function (err) {
+                console.log("ServiceWorker registration failed: ", err);
+            });
+        });
+    }
 
     /**
      * Detecting vertical squash in loaded image.
@@ -490,11 +477,11 @@
             return;
         }
         if (g_img_nr === undefined) {
-            alert(navigator.mozL10n.get("lb_choose"));
+            $("#popup_choose").popup("open");
             return;
         }
         if (g_own_image === undefined && g_sliderPos === 0) {
-            alert(navigator.mozL10n.get("lb_choose"));
+            $("#popup_choose").popup("open");
             return;
         }
         if (g_medal && $("#image" + g_sliderPos + "-" + g_img_nr).hasClass("locked")) {
@@ -987,11 +974,11 @@
         if (g_windows_height > g_windows_width) {
             g_portrait = "p";
             $("#img_title").attr("style", "width:100%;");
-            $("#image0").attr("style", "height:" + (g_windows_width / 3 - 50) * 1.5 + "px;");
+            $(".image0").attr("style", "height:" + (g_windows_width / 3 - 50) * 1.5 + "px;");
             $(".lock").css({"left": "10%", "bottom": (g_windows_width - 70) / 9.8, "width": "80%"});
         } else {
             $("#img_title").attr("style", "max-height:" + (g_windows_height / 5) + "px;");
-            $("#image0").attr("style", "height:" + (g_windows_width / 3 - 50) / 1.5 + "px;");
+            $(".image0").attr("style", "height:" + (g_windows_width / 3 - 50) / 1.5 + "px;");
             $(".lock").css({"left": "25%", "bottom": (g_windows_width - 70) / 30, "width": "50%"});
         }
         $popupTheme.css("max-height", (g_windows_height - 10) + "px");
@@ -999,11 +986,19 @@
         $bt_easy.attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
         $bt_med.attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
         $bt_hard.attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
-        for (s = 1; s < 5; s += 1) {
-            for (n = 1; n < 4; n += 1) {
-                $("#radio" + s + "-" + n).attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
-                $("#image" + s + "-" + n).attr("src", "Images/" + g_theme + "/image-set-" + s + "/sujet" + g_portrait + n + "s.jpg");
+        if (navigator.onLine) {
+            for (s = 1; s < 5; s += 1) {
+                for (n = 1; n < 4; n += 1) {
+                    $("#radio" + s + "-" + n).attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
+                    $("#image" + s + "-" + n).attr("src", "Images/" + g_theme + "/image-set-" + s + "/sujet" + g_portrait + n + "s.jpg");
+                }
             }
+            $(".offline").hide();
+            $(".online").show();
+        } else {
+            $(".offline").show();
+            $(".online").hide();
+            g_image_slider.slide(0, 0);
         }
         if (!(g_theme === g_last_theme) || !(g_portrait === g_last_portrait)) {
             g_last_theme = g_theme;
@@ -1130,7 +1125,7 @@
     function handleFileSelect(evt) {
         var f;
         if (navigator.sayswho === "Safari,5.1.7" || navigator.sayswho === "MSIE,9.0") {
-            alert(navigator.mozL10n.get("lb_own_img"));
+            $("#popup_own_img").popup("open");
             return;
         }
 
@@ -1146,7 +1141,7 @@
                 var bin = atob(g_own_image.split(",")[1]);
                 var exif = EXIF.readFromBinaryFile(new BinaryFile(bin));
                 g_own_orientation = exif.Orientation;
-                $("#image0").attr("src", g_own_image);
+                $(".image0").attr("src", g_own_image);
                 content_formatting();
                 setTimeout(function () {
                     content_formatting();
@@ -1156,9 +1151,9 @@
         reader.readAsDataURL(f);
     }
 
-    $("#image-set-0").click(function () {
+    $(".own_image").click(function () {
         if (navigator.sayswho === "Safari,5.1.7" || navigator.sayswho === "MSIE,9.0") {
-            alert(navigator.mozL10n.get("lb_own_img"));
+            $("#popup_own_img").popup("open");
             return;
         }
         // for FirefoxOS
@@ -1171,7 +1166,7 @@
                 });
                 activity.onsuccess = function () {
                     g_own_image = window.URL.createObjectURL(this.result.blob);
-                    $("#image0").attr("src", g_own_image);
+                    $(".image0").attr("src", g_own_image);
                     content_formatting();
                     setTimeout(function () {
                         content_formatting();
@@ -1245,6 +1240,9 @@
     window.onload = function () {
         if (g_firstOnLoad) {
             g_firstOnLoad = false;
+            if (!g_canvas_supported) {
+                $("#popup_canvas").popup("open");
+            }
             g_image_slider = new Swipe(document.getElementById("image_slider"), {
                 startSlide: 1,
                 callback: function (ignore, pos) {

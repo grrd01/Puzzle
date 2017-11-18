@@ -49,6 +49,11 @@
       "src": "Images/g_icon_256.png",
       "type": "image/png",
       "sizes": "256x256"
+    },
+    {
+      "src": "Images/g_icon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "background_color": "#434343",

@@ -100,9 +100,9 @@
     if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
             navigator.serviceWorker.register("sw.js").then(function (registration) {
-                console.log("ServiceWorker registration successful with scope: ", registration.scope);
+                // console.log("ServiceWorker registration successful with scope: ", registration.scope);
             }, function (err) {
-                console.log("ServiceWorker registration failed: ", err);
+                //console.log("ServiceWorker registration failed: ", err);
             });
         });
     }
@@ -489,7 +489,7 @@
         }
         g_buildPuzzle = true;
 
-        $.mobile.showPageLoadingMsg("a", navigator.mozL10n.get("lb_load"), false);
+        $.mobile.showPageLoadingMsg("a", document.webL10n.get("lb_load"), false);
         g_back_g_grid = $b_back_g_grid.val() === "on";
         g_back_g_image = $b_back_g_image.val() === "on";
         g_rotate = $b_rotate.val() === "on";
@@ -1183,7 +1183,8 @@
         g_theme = theme;
         $select_theme_img.attr("src", "Images/" + g_theme + "/theme.png");
         if (g_lang_ready) {
-            $("#select_theme").html(navigator.mozL10n.get("lb_" + g_theme));
+            console.log("label1");
+            $("#select_theme").html(document.webL10n.get("lb_" + g_theme));
         }
         if (localStorageOK) {
             localStorage.setItem("s_theme", theme);
@@ -1404,19 +1405,25 @@
         }
     }
 
-    navigator.mozL10n.ready(function () {
+    document.webL10n.ready(function () {
         // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?theme=america&lang=ru
         g_lang_ready = true;
         url_param = urlQuery("lang");
-        if (url_param) {
-            if (url_param !== navigator.mozL10n.language.code) {
-                navigator.mozL10n.language.code = url_param;
-            }
+        if (url_param && url_param !== document.webL10n.getLanguage()) {
+            g_lang_ready = false;
+            document.webL10n.setLanguage(url_param);
+        } else {
+            $("#select_theme").html(document.webL10n.get("lb_" + g_theme));
+            setTimeout(function () {
+                popupNew();
+            }, 500);
         }
-        $("#select_theme").html(navigator.mozL10n.get("lb_" + g_theme));
-        setTimeout(function () {
-            popupNew();
-        }, 500);
     });
+
+    /*
+    document.addEventListener('localized', function () {
+
+    });
+    */
 
 }());

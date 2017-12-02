@@ -19,7 +19,6 @@
         height: document.getElementById("container").height
     });
     var iOS = (!!navigator.userAgent.match(/(iPad|iPhone|iPod)/g));
-    //var firefoxOS = (!!"mozApps" in navigator && navigator.userAgent.search("Mobile") != -1);
     var url_param;
     var g_lang_ready = false;
     var g_theme;
@@ -1410,20 +1409,22 @@
         g_lang_ready = true;
         url_param = urlQuery("lang");
         if (url_param && url_param !== document.webL10n.getLanguage()) {
-            g_lang_ready = false;
             document.webL10n.setLanguage(url_param);
-        } else {
+            g_lang_ready = false;
+        }
+    });
+
+    document.addEventListener('localized', function () {
+        if (g_lang_ready) {
+            $("html").attr("lang", document.webL10n.getLanguage().substr(0, 2));
+            $('meta[name=description]').attr("content", document.webL10n.get("lb_desc"));
+            $('link[rel=manifest]').attr("href", "Manifest/appmanifest_" + document.webL10n.getLanguage().substr(0, 2) +".json");
             $("#select_theme").html(document.webL10n.get("lb_" + g_theme));
             setTimeout(function () {
                 popupNew();
             }, 500);
         }
+        g_lang_ready = true;
     });
-
-    /*
-    document.addEventListener('localized', function () {
-
-    });
-    */
 
 }());

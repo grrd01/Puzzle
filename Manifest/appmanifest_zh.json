@@ -2,8 +2,8 @@
   "name": "grrd's Puzzle",
   "short_name": "Puzzle",
   "version": "4.5",
-  "description": "__MSG_appDesc__",
-  "default_locale": "en",
+  "description": "grrd’s Puzzle是一款益智类拼图游戏。 丰富的游戏图片可供选择，您也可以使用自己的照片作为游戏图片。",
+  "default_locale": "zh",
   "icons": [
     {
       "src": "Images/g_icon_16.png",
@@ -59,6 +59,6 @@
   "background_color": "#434343",
   "theme_color": "#434343",
   "display": "standalone",
-  "start_url": "index.html",
+  "start_url": "../index.html",
   "author": "Gerard Tyedmers"
 }

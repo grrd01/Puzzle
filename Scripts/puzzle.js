@@ -4,7 +4,7 @@
  * Licensed under the MPL License
  */
 
-/*jslint browser:true, for:true, this: true, devel: true */ /*global $ Kinetic, window, jQuery, EXIF, FileReader, BinaryFile, atob, Swipe, MozActivity */
+/*jslint browser:true, for:true, this: true, devel: true */ /*global $ Kinetic, window, jQuery, EXIF, FileReader, Swipe, MozActivity */
 
 
 (function () {
@@ -100,7 +100,7 @@
         window.addEventListener("load", function () {
             navigator.serviceWorker.register("sw.js").then(function (registration) {
                 // console.log("ServiceWorker registration successful with scope: ", registration.scope);
-            }, function (err) {
+            }, function (ignore) {
                 //console.log("ServiceWorker registration failed: ", err);
             });
         });
@@ -396,7 +396,7 @@
             l_temp_height = l_temp_height / verticalSquashRatio;
         }
 
-        if (g_own_orientation === 5 || g_own_orientation === 6 || g_own_orientation === 7 || g_own_orientation === 8) {
+        if (g_image_slider.getPos() === 0 && (g_own_orientation === 5 || g_own_orientation === 6 || g_own_orientation === 7 || g_own_orientation === 8)) {
             l_temp_width = g_canvas_height;
             l_temp_height = g_canvas_width;
         }
@@ -1137,9 +1137,9 @@
         reader.onload = (function () {
             return function (e) {
                 g_own_image = e.target.result;
-                var bin = atob(g_own_image.split(",")[1]);
-                var exif = EXIF.readFromBinaryFile(new BinaryFile(bin));
-                g_own_orientation = exif.Orientation;
+                EXIF.getData(evt.target.files[0], function () {
+                    g_own_orientation = EXIF.getTag(this, "Orientation");
+                });
                 $(".image0").attr("src", g_own_image);
                 content_formatting();
                 setTimeout(function () {
@@ -1182,7 +1182,6 @@
         g_theme = theme;
         $select_theme_img.attr("src", "Images/" + g_theme + "/theme.png");
         if (g_lang_ready) {
-            console.log("label1");
             $("#select_theme").html(document.webL10n.get("lb_" + g_theme));
         }
         if (localStorageOK) {
@@ -1414,11 +1413,11 @@
         }
     });
 
-    document.addEventListener('localized', function () {
+    document.addEventListener("localized", function () {
         if (g_lang_ready) {
             $("html").attr("lang", document.webL10n.getLanguage().substr(0, 2));
-            $('meta[name=description]').attr("content", document.webL10n.get("lb_desc"));
-            $('link[rel=manifest]').attr("href", "Manifest/appmanifest_" + document.webL10n.getLanguage().substr(0, 2) +".json");
+            $("meta[name=description]").attr("content", document.webL10n.get("lb_desc"));
+            $("link[rel=manifest]").attr("href", "Manifest/appmanifest_" + document.webL10n.getLanguage().substr(0, 2) + ".json");
             $("#select_theme").html(document.webL10n.get("lb_" + g_theme));
             setTimeout(function () {
                 popupNew();

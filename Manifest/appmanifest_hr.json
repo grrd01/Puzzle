@@ -6,52 +6,52 @@
   "default_locale": "hr",
   "icons": [
     {
-      "src": "Images/g_icon_16.png",
+      "src": "../Images/g_icon_16.png",
       "type": "image/png",
       "sizes": "16x16"
     },
     {
-      "src": "Images/g_icon_32.png",
+      "src": "../Images/g_icon_32.png",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "Images/g_icon_48.png",
+      "src": "../Images/g_icon_48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "Images/g_icon_60.png",
+      "src": "../Images/g_icon_60.png",
       "type": "image/png",
       "sizes": "60x60"
     },
     {
-      "src": "Images/g_icon_64.png",
+      "src": "../Images/g_icon_64.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "Images/g_icon_96.png",
+      "src": "../Images/g_icon_96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "Images/g_icon_128.png",
+      "src": "../Images/g_icon_128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "Images/g_icon_192.png",
+      "src": "../Images/g_icon_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "Images/g_icon_256.png",
+      "src": "../Images/g_icon_256.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "Images/g_icon_512.png",
+      "src": "../Images/g_icon_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

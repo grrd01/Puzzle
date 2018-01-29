@@ -1,6 +1,6 @@
 {
   "name": "grrd's Puzzle",
-  "version": "4.5",
+  "version": "4.6",
   "manifest_version": 2,
   "description": "__MSG_appDesc__",
   "default_locale": "en",
@@ -16,10 +16,10 @@
   },
   "app": {
     "urls": [
-      "http://homepage.hispeed.ch/grrds_games/Puzzle/"
+      "https://grrd01.github.io/Puzzle/"
     ],
     "launch": {
-      "web_url": "http://homepage.hispeed.ch/grrds_games/Puzzle/"
+      "web_url": "https://grrd01.github.io/Puzzle/"
     }
   },
   "author": "Gerard Tyedmers"

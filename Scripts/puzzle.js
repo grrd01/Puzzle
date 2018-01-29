@@ -1418,6 +1418,7 @@
             $("html").attr("lang", document.webL10n.getLanguage().substr(0, 2));
             $("meta[name=description]").attr("content", document.webL10n.get("lb_desc"));
             $("link[rel=manifest]").attr("href", "Manifest/appmanifest_" + document.webL10n.getLanguage().substr(0, 2) + ".json");
+            $("link[rel=canonical]").attr("href", "https://grrd01.github.io/Puzzle/?lang=" + document.webL10n.getLanguage().substr(0, 2));
             $("#select_theme").html(document.webL10n.get("lb_" + g_theme));
             setTimeout(function () {
                 popupNew();

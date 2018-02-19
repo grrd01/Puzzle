@@ -1420,6 +1420,9 @@
             $("link[rel=manifest]").attr("href", "Manifest/appmanifest_" + document.webL10n.getLanguage().substr(0, 2) + ".json");
             $("link[rel=canonical]").attr("href", "https://grrd01.github.io/Puzzle/?lang=" + document.webL10n.getLanguage().substr(0, 2));
             $("#select_theme").html(document.webL10n.get("lb_" + g_theme));
+            $("#radio0-1").attr("title", document.webL10n.get("lb_image"));
+            $("#radio-offline").attr("title", document.webL10n.get("lb_image"));
+            $(".image0").attr("alt", document.webL10n.get("lb_image"));
             setTimeout(function () {
                 popupNew();
             }, 500);

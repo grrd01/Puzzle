@@ -66,8 +66,8 @@
 
                 <img id="img_title" src="Images/title1.png" alt="grrd's Puzzle" />
                 <div data-role="controlgroup" data-type="horizontal" class="fr">
-                    <a href="#popupInfo" class="bt_small" data-role="button" data-rel="dialog" data-transition="pop"><img class="bt_small" src="Images/info.png" alt="about"/></a>
-                    <a href="#popupSettings" class="bt_small" data-role="button" data-rel="dialog" data-transition="pop"><img class="bt_small" src="Images/settings.png" alt="settings"/></a>
+                    <a href="#popupInfo" class="bt_small" data-role="button" data-rel="dialog" data-transition="pop" data-l10n-id="bt_about"><img class="bt_small" src="Images/info.png" data-l10n-id="bt_about" alt="about"/></a>
+                    <a href="#popupSettings" class="bt_small" data-role="button" data-rel="dialog" data-transition="pop" data-l10n-id="bt_settings"><img class="bt_small" src="Images/settings.png" data-l10n-id="bt_settings" alt="settings"/></a>
                 </div>
 
 
@@ -87,7 +87,7 @@
                     <br>
                     <fieldset data-role="controlgroup" data-type="horizontal" class="w100 tc">
                         <input type="radio" class="own_image" name="image-set-o" id="image-offline" value="1" checked="checked"/>
-                        <label for="image-offline"><img class="image0" src="Images/photo.svg" alt="play with your own image"/></label>
+                        <label id="radio-offline" for="image-offline"><img class="image0" src="Images/photo.svg" alt="play with your own image"/></label>
                     </fieldset>
                     <br>
                 </div>
@@ -187,18 +187,18 @@
                     </div>
                 </div>
                 <div class="tc online">
-                    <a id="b_prev" data-role="button" class="fl" href='#' data-mini="true"><img src="Images/prev.png" alt="prev"/></a>
+                    <a id="b_prev" data-role="button" class="fl" href='#' data-mini="true" data-l10n-id="bt_prev"><img src="Images/prev.png" data-l10n-id="bt_prev" alt="prev"/></a>
                     <img id="bullets0" src="Images/bullets0o.png" alt=""/>
                     <img id="bullets1" src="Images/bullets1.png" alt=""/>
                     <img id="bullets2" src="Images/bullets0.png" alt=""/>
                     <img id="bullets3" src="Images/bullets0.png" alt=""/>
                     <img id="bullets4" src="Images/bullets0.png" alt=""/>
-                    <a id="b_next" data-role="button" class="fr" href='#' data-mini="true"><img src="Images/next.png" alt="next"/></a>
+                    <a id="b_next" data-role="button" class="fr" href='#' data-mini="true" data-l10n-id="bt_next"><img src="Images/next.png" data-l10n-id="bt_next" alt="next"/></a>
                 </div>
                 <div data-role="controlgroup" data-type="horizontal" class="w100">
-                    <a id="bt_easy" href="#" data-role="button" data-mini="true"><img id="img_easy" src="Images/easy.png" alt="Easy" class="bt_diff"/></a>
-                    <a id="bt_med" href="#" data-role="button" data-mini="true"><img id="img_med" src="Images/medium.png" alt="Medium" class="bt_diff"/></a>
-                    <a id="bt_hard" href="#" data-role="button" data-mini="true"><img id="img_hard" src="Images/hard.png" alt="Hard" class="bt_diff"/></a>
+                    <a id="bt_easy" href="#" data-role="button" data-mini="true" data-l10n-id="bt_easy"><img id="img_easy" src="Images/easy.png" data-l10n-id="bt_easy" alt="Easy" class="bt_diff"/></a>
+                    <a id="bt_med" href="#" data-role="button" data-mini="true" data-l10n-id="bt_medium"><img id="img_med" src="Images/medium.png" data-l10n-id="bt_medium" alt="Medium" class="bt_diff"/></a>
+                    <a id="bt_hard" href="#" data-role="button" data-mini="true" data-l10n-id="bt_hard"><img id="img_hard" src="Images/hard.png" data-l10n-id="bt_hard" alt="Hard" class="bt_diff"/></a>
                 </div>
             </div>
 
@@ -221,7 +221,7 @@
 
         <div data-role="page" id="game" class="game" data-theme="a">
             <div id="container" class="container"></div>
-            <a href="#" id="bt_close" data-iconpos="notext" data-icon="delete" data-direction="reverse" data-role="button" data-theme="a" class="back">Back</a>
+            <a href="#" id="bt_close" data-iconpos="notext" data-icon="delete" data-direction="reverse" data-role="button" data-theme="a" class="back" data-l10n-id="bt_back">Back</a>
         </div>
 
         <div data-role="page" id="popupSettings">

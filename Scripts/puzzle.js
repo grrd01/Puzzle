@@ -946,7 +946,7 @@
                 } else if (l_currentLevel > 0) {
                     $medal = $("#medal" + s + "-" + n);
                     $medal.removeClass("dn");
-                    $medal.attr("src", "Images/medal" + l_currentLevel + ".png");
+                    $medal.attr("src", "Images/medal" + l_currentLevel + ".svg");
                     if (n < 3) {
                         $("#image" + s + "-" + (n + 1)).removeClass("locked");
                         $("#lock" + s + "-" + (n + 1)).addClass("dn");

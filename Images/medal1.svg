@@ -4,7 +4,8 @@
       <stop offset="0%" style="stop-color:#61150A;" />
       <stop offset="12%" style="stop-color:#8B2A07;" />
       <stop offset="32%" style="stop-color:#E5CFB5;" />
-      <stop offset="67%" style="stop-color:#A63C05;" />
+      <stop offset="47%" style="stop-color:#C4731C;" />
+      <stop offset="60%" style="stop-color:#A63C05;" />
       <stop offset="90%" style="stop-color:#61150A;" />
    </linearGradient>
    <linearGradient x1="0%" y1="0%" x2="90%" y2="100%" id="grad2" xlink:href="#grad1" gradientUnits="userSpaceOnUse" />

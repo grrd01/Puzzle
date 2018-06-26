@@ -4,7 +4,8 @@
  * Licensed under the MPL License
  */
 
-/*jslint browser:true, for:true, this: true, devel: true */ /*global $ Kinetic, window, jQuery, EXIF, FileReader, Swipe, MozActivity */
+/*jslint browser:true, for:true, this: true, devel: true, long: true */
+/*global $ Kinetic, window, jQuery, EXIF, FileReader, Swipe, MozActivity */
 
 
 (function () {
@@ -25,6 +26,7 @@
     var g_last_theme;
     var g_image_path;
     var g_own_image;
+    var g_image_size;
     var g_own_orientation;
     var g_imageObj = new Image();
     var g_windows_width;
@@ -507,7 +509,18 @@
         g_canvas_width = g_windows_width;
         g_lock_portrait = g_portrait;
         if (g_sliderPos !== 0) {
-            g_image_path = "Images/" + g_theme + "/image-set-" + g_sliderPos + "/sujet" + g_portrait + g_img_nr + ".jpg";
+            console.log("g_windows_width: " +  g_windows_width + " g_windows_height: " + g_windows_height );
+            if (Math.min(g_windows_height, g_windows_width) <= 270) {
+                // console.log("loading small image");
+                g_image_size = "s";
+            } else if (Math.min(g_windows_height, g_windows_width) > 1080) {
+                // console.log("loading large image");
+                g_image_size = "l";
+            } else {
+                // console.log("loading medium image");
+                g_image_size = "";
+            }
+            g_image_path = "Images/" + g_theme + "/image-set-" + g_sliderPos + "/sujet" + g_portrait + g_img_nr + g_image_size + ".jpg";
         } else {
             g_image_path = g_own_image;
         }
@@ -1353,6 +1366,17 @@
                     setTheme(localStorage.getItem("s_theme"));
                 }
             }
+            // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?mascha=true&theme=mascha
+            url_param = urlQuery("mascha");
+            if (url_param === "true") {
+                $(".t_mascha").removeClass("dn");
+            }
+            // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?shrek=true&mascha=true&theme=mascha
+            url_param = urlQuery("shrek");
+            if (url_param === "true") {
+                $(".t_shrek").removeClass("dn");
+                $("#favicon").attr("href","favicon_dark.ico");
+            }
             // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?theme=mascha
             url_param = urlQuery("theme");
             if (url_param) {
@@ -1361,10 +1385,6 @@
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
                 $b_prev.attr("style", "display:none;");
                 $b_next.attr("style", "display:none;");
-            }
-            if (!(/Android/i.test(navigator.userAgent))) {
-                $b_image_input.attr("style", "display:none;");
-                $("#b_tit_image_input").attr("style", "display:none;");
             }
             $("#popupSettings").find("label").attr("style", "display:inline;");
             content_formatting();

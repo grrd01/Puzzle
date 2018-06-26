@@ -20,7 +20,7 @@
         <link rel="apple-touch-icon" sizes="72x72" href="Images/apple-touch-icon-72x72.png" >
         <link rel="apple-touch-icon" sizes="114x114" href="Images/apple-touch-icon-114x114.png" >
         <link rel="apple-touch-startup-image" href="Images/apple-touch-startup-image-320x480.png" >
-        <link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" >
+        <link rel="shortcut icon" id="favicon" type="image/x-icon" href="Images/favicon.ico" >
         <link rel="prefetch" type="application/l10n" href="Locales/locales.ini" />
         <link rel="manifest" href="Manifest/appmanifest.json">
         <link rel="alternate" hreflang="en" href="https://grrd01.github.io/Puzzle/?lang=en" />
@@ -263,24 +263,24 @@
                                 <img src="Images/tricky/theme.png" alt="tricky">
                                 <h2 data-l10n-id="lb_tricky" class="pt10">Tricky</h2></a>
                             </li>
-                            <li><a href="#">
+                            <li class="dn t_mascha"><a href="#">
                                 <img src="Images/mascha/theme.png" alt="mascha">
                                 <h2 data-l10n-id="lb_mascha" class="pt10">Masha</h2></a>
                             </li>
-                            <li><a href="#">
+                            <li class="dn t_mascha"><a href="#">
                                 <img src="Images/mascha2/theme.png" alt="mascha2">
                                 <h2 data-l10n-id="lb_mascha" class="pt10">Masha</h2></a>
                             </li>
-                            <!--li><a href="#">
+                            <li class="dn t_shrek"><a href="#">
                                 <img src="Images/shrek/theme.png" alt="shrek">
                                 <h2 data-l10n-id="lb_shrek" class="pt10">Shrek</h2></a>
-                            </li-->
+                            </li>
                         </ul>
                     </div>
 
-                    <div id="b_tit_image_input">
+                    <div id="b_tit_image_input" class="dn">
                         <h4 class="ui-title" data-l10n-id="lb_image">Choose Image</h4>
-                        <input type="file" id="b_image_input" accept="image/*">
+                        <input type="file" id="b_image_input" accept="image/*" class="dn">
                     </div>
                 </div>
 
@@ -314,15 +314,15 @@
                         <option value="on">On</option>
                     </select>
                 </div>
-                <div data-role="fieldcontain" id="b_gold_enabled" data-theme="d">
+                <div data-role="fieldcontain" id="b_gold_enabled">
                      <label for="b_gold" data-l10n-id="lb_gold">Gold Mode</label>
                      <select name="b_gold" id="b_gold" data-role="slider" data-theme="d">
                         <option value="off">Off</option>
                         <option value="on">On</option>
                      </select>
                 </div>
-                <div data-role="fieldcontain" id="b_gold_disabled"  disabled="disabled">
-                    <label for="b_gold2" data-l10n-id="lb_gold">Gold Mode</label>
+                <div data-role="fieldcontain" id="b_gold_disabled">
+                    <label for="b_gold2" class="grey" data-l10n-id="lb_gold">Gold Mode</label>
                     <select name="b_gold" id="b_gold2" disabled="disabled" data-role="slider">
                         <option value="off">Off</option>
                         <option value="on">On</option>
@@ -375,13 +375,13 @@
             <img id="g_imageObj" alt="" src="Images/dummy.png"/>
         </div>
 
-        <script type="text/javascript" src="Scripts/jquery-1.12.3.min.js"></script>
-        <script type="text/javascript" src="Scripts/jquery.mobile-1.3.2.min.js"></script>
-        <script type="text/javascript" src="Scripts/kinetic-v4.7.4.min.js"></script>
-        <script type="text/javascript" src='Scripts/swipe.js'></script>
-        <script type="text/javascript" src='Scripts/exif.js'></script>
-        <script type="text/javascript" src="Scripts/l10n.js"></script>
-        <script type="text/javascript" src="Scripts/puzzle.js"></script>
+        <script src="Scripts/jquery-1.12.3.min.js"></script>
+        <script src="Scripts/jquery.mobile-1.3.2.min.js"></script>
+        <script src="Scripts/kinetic-v4.7.4.min.js"></script>
+        <script src='Scripts/swipe.js'></script>
+        <script src='Scripts/exif.js'></script>
+        <script src="Scripts/l10n.js"></script>
+        <script src="Scripts/puzzle.js"></script>
 
     </body>
 </html>

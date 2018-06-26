@@ -35,6 +35,7 @@ p.alert { margin-top:3px; }
 .w60 {width: 60px;}
 .w80 {width: 80%;}
 .w100 {width: 100%;}
+.grey {color: #999999;}
 .medal {position: absolute; right: 5px; bottom: -5px; width: 20%; min-width: 25px;}
 .lock {position: absolute; left: 25%; bottom:10px; width: 50%; min-width: 25px;}
 .locked {opacity: 0.3;}

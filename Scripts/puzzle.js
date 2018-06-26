@@ -1211,29 +1211,29 @@
 
     function slide() {
         if (g_image_slider.getPos() === 0) {
-            $("#bullets0").attr("src", "Images/bullets1o.png");
+            $("#bullets0").attr("src", "Images/bullets1o.svg");
         } else {
-            $("#bullets0").attr("src", "Images/bullets0o.png");
+            $("#bullets0").attr("src", "Images/bullets0o.svg");
         }
         if (g_image_slider.getPos() === 1) {
-            $("#bullets1").attr("src", "Images/bullets1.png");
+            $("#bullets1").attr("src", "Images/bullets1.svg");
         } else {
-            $("#bullets1").attr("src", "Images/bullets0.png");
+            $("#bullets1").attr("src", "Images/bullets0.svg");
         }
         if (g_image_slider.getPos() === 2) {
-            $("#bullets2").attr("src", "Images/bullets1.png");
+            $("#bullets2").attr("src", "Images/bullets1.svg");
         } else {
-            $("#bullets2").attr("src", "Images/bullets0.png");
+            $("#bullets2").attr("src", "Images/bullets0.svg");
         }
         if (g_image_slider.getPos() === 3) {
-            $("#bullets3").attr("src", "Images/bullets1.png");
+            $("#bullets3").attr("src", "Images/bullets1.svg");
         } else {
-            $("#bullets3").attr("src", "Images/bullets0.png");
+            $("#bullets3").attr("src", "Images/bullets0.svg");
         }
         if (g_image_slider.getPos() === 4) {
-            $("#bullets4").attr("src", "Images/bullets1.png");
+            $("#bullets4").attr("src", "Images/bullets1.svg");
         } else {
-            $("#bullets4").attr("src", "Images/bullets0.png");
+            $("#bullets4").attr("src", "Images/bullets0.svg");
         }
     }
 
@@ -1259,29 +1259,29 @@
                 startSlide: 1,
                 callback: function (ignore, pos) {
                     if (pos === 0) {
-                        $("#bullets0").attr("src", "Images/bullets1o.png");
+                        $("#bullets0").attr("src", "Images/bullets1o.svg");
                     } else {
-                        $("#bullets0").attr("src", "Images/bullets0o.png");
+                        $("#bullets0").attr("src", "Images/bullets0o.svg");
                     }
                     if (pos === 1) {
-                        $("#bullets1").attr("src", "Images/bullets1.png");
+                        $("#bullets1").attr("src", "Images/bullets1.svg");
                     } else {
-                        $("#bullets1").attr("src", "Images/bullets0.png");
+                        $("#bullets1").attr("src", "Images/bullets0.svg");
                     }
                     if (pos === 2) {
-                        $("#bullets2").attr("src", "Images/bullets1.png");
+                        $("#bullets2").attr("src", "Images/bullets1.svg");
                     } else {
-                        $("#bullets2").attr("src", "Images/bullets0.png");
+                        $("#bullets2").attr("src", "Images/bullets0.svg");
                     }
                     if (pos === 3) {
-                        $("#bullets3").attr("src", "Images/bullets1.png");
+                        $("#bullets3").attr("src", "Images/bullets1.svg");
                     } else {
-                        $("#bullets3").attr("src", "Images/bullets0.png");
+                        $("#bullets3").attr("src", "Images/bullets0.svg");
                     }
                     if (pos === 4) {
-                        $("#bullets4").attr("src", "Images/bullets1.png");
+                        $("#bullets4").attr("src", "Images/bullets1.svg");
                     } else {
-                        $("#bullets4").attr("src", "Images/bullets0.png");
+                        $("#bullets4").attr("src", "Images/bullets0.svg");
                     }
                 }
             });

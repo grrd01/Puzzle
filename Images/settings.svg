@@ -1,0 +1,29 @@
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="74" height="74" style="fill: none; stroke: white; stroke-width: 3.8; stroke-linejoin: round; ">
+  <path d="M30 3
+           A 37 37 0 0 1 44 3
+           L 44 13
+           A 25 25 0 0 1 54.5 20
+           L 63 14
+           A 37 37 0 0 1 70 25.5
+           L 61 31
+           A 25 25 0 0 1 61 42.5
+           L 70 48.5
+           A 37 37 0 0 1 63 60
+           L 54.5 54
+           A 25 25 0 0 1 44 61
+           L 44 71
+           A 37 37 0 0 1 30 71
+           L 30 61
+           A 25 25 0 0 1 19.5 54
+           L 11 60
+           A 37 37 0 0 1 4 48.5
+           L 13 42.5
+           A 25 25 0 0 1 13 31
+           L 4 25.5
+           A 37 37 0 0 1 11 14
+           L 19.5 20
+           A 25 25 0 0 1 30 13
+           Z" />
+  <circle cx="37" cy="37" r="12" />
+</svg>
+  

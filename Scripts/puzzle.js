@@ -27,6 +27,7 @@
     var g_image_path;
     var g_own_image;
     var g_image_size;
+    var g_pixel_ratio;
     var g_own_orientation;
     var g_imageObj = new Image();
     var g_windows_width;
@@ -509,15 +510,16 @@
         g_canvas_width = g_windows_width;
         g_lock_portrait = g_portrait;
         if (g_sliderPos !== 0) {
-            console.log("g_windows_width: " +  g_windows_width + " g_windows_height: " + g_windows_height );
-            if (Math.min(g_windows_height, g_windows_width) <= 270) {
-                // console.log("loading small image");
+            if (window.devicePixelRatio !== undefined) {
+                g_pixel_ratio = window.devicePixelRatio;
+            } else {
+                g_pixel_ratio = 1;
+            }
+            if (Math.min(g_windows_height, g_windows_width) * g_pixel_ratio <= 270) {
                 g_image_size = "s";
-            } else if (Math.min(g_windows_height, g_windows_width) > 1080) {
-                // console.log("loading large image");
+            } else if (Math.min(g_windows_height, g_windows_width) * g_pixel_ratio > 1080) {
                 g_image_size = "l";
             } else {
-                // console.log("loading medium image");
                 g_image_size = "";
             }
             g_image_path = "Images/" + g_theme + "/image-set-" + g_sliderPos + "/sujet" + g_portrait + g_img_nr + g_image_size + ".jpg";

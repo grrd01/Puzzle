@@ -1377,7 +1377,7 @@
             url_param = urlQuery("shrek");
             if (url_param === "true") {
                 $(".t_shrek").removeClass("dn");
-                $("#favicon").attr("href","favicon_dark.ico");
+                $("#favicon").attr("href","Images/favicon_dark.ico");
             }
             // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?theme=mascha
             url_param = urlQuery("theme");

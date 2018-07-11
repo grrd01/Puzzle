@@ -917,9 +917,9 @@
             $("#img_hard").attr("src", "Images/hard_gold.png");
         } else {
             g_gold = false;
-            $("#img_easy").attr("src", "Images/easy.png");
-            $("#img_med").attr("src", "Images/medium.png");
-            $("#img_hard").attr("src", "Images/hard.png");
+            $("#img_easy").attr("src", "Images/easy.svg");
+            $("#img_med").attr("src", "Images/medium.svg");
+            $("#img_hard").attr("src", "Images/hard.svg");
         }
     }
 

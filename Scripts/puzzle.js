@@ -912,9 +912,9 @@
         }
         if ($b_gold.val() === "on") {
             g_gold = true;
-            $("#img_easy").attr("src", "Images/easy_gold.png");
-            $("#img_med").attr("src", "Images/medium_gold.png");
-            $("#img_hard").attr("src", "Images/hard_gold.png");
+            $("#img_easy").attr("src", "Images/easy_gold.svg");
+            $("#img_med").attr("src", "Images/medium_gold.svg");
+            $("#img_hard").attr("src", "Images/hard_gold.svg");
         } else {
             g_gold = false;
             $("#img_easy").attr("src", "Images/easy.svg");

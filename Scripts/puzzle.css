@@ -10,7 +10,7 @@ canvas {border: 0; margin: 0; padding: 0;}
 div.ui-slider-switch {position: absolute; right: 0; width: 20%;}
 div.game {margin: 0; padding: 0;}
 div.container {position: absolute;}
-a.bt_small {padding: -20px; height: 35px; width: 55px;}
+a.bt_small {height: 35px; width: 55px;}
 img.bt_small {margin-top: -5px; margin-left: -10px; height: 25px; width: 25px;}
 a.popup {width: 310px; height: 80px; display: block; text-decoration: none; color: white;}
 a.back {margin: 20px; overflow: hidden; position: absolute; right: 0;}

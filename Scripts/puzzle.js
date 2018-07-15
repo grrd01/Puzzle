@@ -22,6 +22,8 @@
     var iOS = (!!navigator.userAgent.match(/(iPad|iPhone|iPod)/g));
     var url_param;
     var g_lang_ready = false;
+    var g_mascha = 0;
+    var g_imageset = 1;
     var g_theme;
     var g_last_theme;
     var g_image_path;
@@ -1001,7 +1003,7 @@
         $bt_med.attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
         $bt_hard.attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
         if (navigator.onLine) {
-            for (s = 1; s < 5; s += 1) {
+            for (s = 1; s < g_imageset + 1; s += 1) {
                 for (n = 1; n < 4; n += 1) {
                     $("#radio" + s + "-" + n).attr("style", "width:" + (g_windows_width / 3 - 12) + "px;");
                     $("#image" + s + "-" + n).attr("src", "Images/" + g_theme + "/image-set-" + s + "/sujet" + g_portrait + n + "s.jpg");
@@ -1315,6 +1317,12 @@
                 back(false);
                 e.preventDefault();
             });
+            $("#s_mascha").click(function (e) {
+                g_mascha += 1;
+                if (g_mascha > 2) {
+                    $(".t_mascha").removeClass("dn");
+                }
+            });
             $popupNewTheme.click(function (e) {
                 setTheme("flowers");
                 $("#popupNewTheme").popup("close");
@@ -1391,6 +1399,7 @@
             $("#popupSettings").find("label").attr("style", "display:inline;");
             content_formatting();
             setTimeout(function () {
+                g_imageset = 4;
                 content_formatting();
             }, 500);
         }

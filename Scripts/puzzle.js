@@ -23,7 +23,8 @@
     var url_param;
     var g_lang_ready = false;
     var g_mascha = 0;
-    var g_imageset = 1;
+    var g_theme_imgs = false;
+    var g_imageset = 2;
     var g_theme;
     var g_last_theme;
     var g_image_path;
@@ -1271,6 +1272,8 @@
                         $("#bullets1").attr("src", "Images/bullets1.svg");
                     } else {
                         $("#bullets1").attr("src", "Images/bullets0.svg");
+                        g_imageset = 4;
+                        content_formatting();
                     }
                     if (pos === 2) {
                         $("#bullets2").attr("src", "Images/bullets1.svg");
@@ -1321,6 +1324,20 @@
                 g_mascha += 1;
                 if (g_mascha > 2) {
                     $(".t_mascha").removeClass("dn");
+                }
+            });
+            $("#bt_settings").click(function (e) {
+                if (!g_theme_imgs) {
+                    g_theme_imgs = true;
+                    $("#t_europe").attr("src", "Images/europe/theme.png");
+                    $("#t_asia").attr("src", "Images/asia/theme.png");
+                    $("#t_america").attr("src", "Images/america/theme.png");
+                    $("#t_animals").attr("src", "Images/animals/theme.png");
+                    $("#t_flowers").attr("src", "Images/flowers/theme.png");
+                    $("#t_tricky").attr("src", "Images/tricky/theme.png");
+                    $("#t_mascha").attr("src", "Images/mascha/theme.png");
+                    $("#t_mascha2").attr("src", "Images/mascha2/theme.png");
+                    $("#t_shrek").attr("src", "Images/shrek/theme.png");
                 }
             });
             $popupNewTheme.click(function (e) {
@@ -1399,7 +1416,6 @@
             $("#popupSettings").find("label").attr("style", "display:inline;");
             content_formatting();
             setTimeout(function () {
-                g_imageset = 4;
                 content_formatting();
             }, 500);
         }

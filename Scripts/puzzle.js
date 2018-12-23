@@ -1337,6 +1337,7 @@
                     $("#t_tricky").attr("src", "Images/tricky/theme.png");
                     $("#t_mascha").attr("src", "Images/mascha/theme.png");
                     $("#t_mascha2").attr("src", "Images/mascha2/theme.png");
+                    $("#t_mascha3").attr("src", "Images/mascha3/theme.png");
                     $("#t_shrek").attr("src", "Images/shrek/theme.png");
                 }
             });

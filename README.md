@@ -9,3 +9,5 @@ grrd's Puzzle is free, no ads, no in-app purchases.
 
 * Copyright (c) 2012 Gerard Tyedmers, grrd@gmx.net
 * Licensed under the MPL License
+
+Click here to play: <https://grrd01.github.io/Puzzle/>

@@ -1,0 +1,21 @@
+{
+  "name": "grrds-Puzzle",
+  "version": "0.1.0",
+  "description": "grrd's Puzzle is a HTML5 jigsaw puzzle game for your smartphone or desktop. You can choose from various images or play with your own pictures at the level of difficulty of your choice.",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/grrd01/Puzzle.git"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "load-grunt-tasks": "^4.0.0",
+    "grunt-svgmin": "^5.0.0",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-replace": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0"
+  }
+}

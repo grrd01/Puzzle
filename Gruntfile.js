@@ -161,6 +161,20 @@ module.exports = function(grunt) {
                         {
                             match: /apple-touch-icon-/g,
                             replacement: 'apple-dark-icon-'
+                        },
+                        {
+                            // <link rel="alternate" hreflang="en" href="https://grrd01.github.io/Puzzle/?lang=en" />
+                            match: /\<link\srel="alternate"\shreflang=".."\shref="https:\/\/grrd01\.github\.io\/Puzzle\/\?lang=.."\>/g,
+                            replacement: function () {
+                                return "";
+                            }
+                        },
+                        {
+                            // <link rel="canonical" href="https://grrd01.github.io/Puzzle/?lang=en" />
+                            match: /\<link\srel="canonical"\shref="https:\/\/grrd01\.github\.io\/Puzzle\/\?lang=.."\>/g,
+                            replacement: function () {
+                                return "";
+                            }
                         }
                     ]
                 },
@@ -200,7 +214,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'uglify',
         'svgmin',
-        'imagemin',
+        //'imagemin',
         'cssmin',
         'htmlmin',
         'replace',

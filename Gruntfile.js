@@ -142,6 +142,35 @@ module.exports = function(grunt) {
                 files: [
                     {expand: true, flatten: true, src: ['../../2_Build/Puzzle/index.html'], dest: '../../2_Build/Puzzle/'}
                 ]
+            },
+            dist2: {
+                options: {
+                    patterns: [
+                        {
+                            match: /dn t_shrek/g,
+                            replacement: 't_shrek'
+                        },
+                        {
+                            match: /dn t_mascha/g,
+                            replacement: 't_mascha'
+                        },
+                        {
+                            match: /favicon.ico/g,
+                            replacement: 'favicon_dark.ico'
+                        },
+                        {
+                            match: /apple-touch-icon-/g,
+                            replacement: 'apple-dark-icon-'
+                        }
+                    ]
+                },
+                files: [
+                    {expand: true, flatten: true, src: ['../../2_Build/Puzzle/index.html'], dest: '../../2_Build/Puzzle/',
+                        rename: function(dest, src) {
+                            return dest + src.replace('index.html','shrek.html');
+                        }
+                    }
+                ]
             }
         },
         copy: {

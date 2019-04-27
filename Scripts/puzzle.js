@@ -23,6 +23,7 @@
     var url_param;
     var g_lang_ready = false;
     var g_mascha = 0;
+    var g_grrd = 0;
     var g_theme_imgs = false;
     var g_imageset = 2;
     var g_theme;
@@ -1324,6 +1325,20 @@
                 g_mascha += 1;
                 if (g_mascha > 2) {
                     $(".t_mascha").removeClass("dn");
+                    if (localStorageOK) {
+                        localStorage.setItem("s_mascha", "true");
+                    }
+                }
+            });
+            $("#s_grrd").click(function (e) {
+                g_grrd += 1;
+                if (g_grrd > 5) {
+                    $(".t_shrek").removeClass("dn");
+                    $("#favicon").attr("href","Images/favicon_dark.ico");
+                    if (localStorageOK) {
+                        localStorage.setItem("s_shrek", "true");
+                    }
+
                 }
             });
             $("#bt_settings").click(function (e) {
@@ -1396,14 +1411,20 @@
             }
             // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?mascha=true&theme=mascha
             url_param = urlQuery("mascha");
-            if (url_param === "true") {
+            if (url_param === "true" || (localStorageOK && localStorage.getItem("s_mascha") === "true")) {
                 $(".t_mascha").removeClass("dn");
+                if (localStorageOK) {
+                    localStorage.setItem("s_mascha", "true");
+                }
             }
             // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?shrek=true&mascha=true&theme=mascha
             url_param = urlQuery("shrek");
-            if (url_param === "true") {
+            if (url_param === "true" || (localStorageOK && localStorage.getItem("s_shrek") === "true")) {
                 $(".t_shrek").removeClass("dn");
                 $("#favicon").attr("href","Images/favicon_dark.ico");
+                if (localStorageOK) {
+                    localStorage.setItem("s_shrek", "true");
+                }
             }
             // Example usage - http://homepage.hispeed.ch/grrds_games/Puzzle/?theme=mascha
             url_param = urlQuery("theme");

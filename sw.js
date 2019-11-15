@@ -7,7 +7,7 @@
 /*jslint devel: true, browser: true */ /*global  self  */
 
 var CACHE_NAME = "grrds-puzzle-cache";
-var CACHE_VERSION = "v1.10";
+var CACHE_VERSION = "v2.01";
 var CACHE = CACHE_NAME + "-" + CACHE_VERSION;
 
 var urlsToCache = [
@@ -18,6 +18,7 @@ var urlsToCache = [
     "Images/bullets1.svg",
     "Images/bullets1o.svg",
     "Images/dice.svg",
+    "Images/down.svg",
     "Images/dummy.png",
     "Images/easy.svg",
     "Images/easy_gold.svg",
@@ -34,6 +35,8 @@ var urlsToCache = [
     "Images/medium.svg",
     "Images/medium_gold.svg",
     "Images/next.svg",
+    "Images/ok.svg",
+    "Images/photo.svg",
     "Images/piece_gold.png",
     "Images/prev.svg",
     "Images/puzzle.svg",
@@ -41,6 +44,7 @@ var urlsToCache = [
     "Images/tictactoe.svg",
     "Images/title1.png",
     "Images/title_wide.png",
+    "Images/x.svg",
     "Images/america/theme.png",
     "Images/animals/theme.png",
     "Images/asia/theme.png",
@@ -52,21 +56,12 @@ var urlsToCache = [
     "Images/shrek/theme.png",
     "Images/tricky/theme.png",
     "Scripts/exif.js",
-    "Scripts/jquery.mobile-1.3.2.min.css",
-    "Scripts/jquery.mobile-1.3.2.min.js",
-    "Scripts/jquery-1.12.3.min.js",
     "Scripts/kinetic-v4.7.4.min.js",
     "Scripts/l10n.js",
     "Scripts/puzzle.css",
     "Scripts/puzzle.js",
     "Scripts/swipe.css",
     "Scripts/swipe.js",
-    "Scripts/images/ajax-loader.gif",
-    "Scripts/images/ajax-loader.png",
-    "Scripts/images/icons-18-black.png",
-    "Scripts/images/icons-18-white.png",
-    "Scripts/images/icons-36-black.png",
-    "Scripts/images/icons-36-white.png",
     "Locales/ar/puzzle.properties",
     "Locales/bn/puzzle.properties",
     "Locales/cs/puzzle.properties",

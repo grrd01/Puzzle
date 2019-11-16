@@ -193,6 +193,7 @@ header {
 .list-button-33, .list-button-33-sel {
     width: calc(100% / 3);
     position: relative;
+    overflow: visible;
 }
 .button-img {
     margin: 10px 20px 10px 20px;

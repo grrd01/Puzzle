@@ -221,8 +221,8 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     opacity: 0;
 }
 .dropdown.show {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+    max-height: 720px;
+    transition: max-height 0.75s ease-in;
     opacity: 1;
 }
 

@@ -8,13 +8,14 @@
     "url": "git://github.com/grrd01/Puzzle.git"
   },
   "devDependencies": {
-    "grunt": "^1.0.3",
-    "load-grunt-tasks": "^5.0.0",
+    "grunt": "^1.0.4",
+    "load-grunt-tasks": "^5.1.0",
     "grunt-svgmin": "^6.0.0",
-    "grunt-contrib-imagemin": "^3.0.1",
+    "grunt-contrib-imagemin": "^3.1.0",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-htmlmin": "^3.1.0",
     "grunt-contrib-uglify": "^4.0.1",
+    "grunt-terser": "^1.0.0",
     "grunt-replace": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0"
   }

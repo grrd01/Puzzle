@@ -3,17 +3,22 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            one: {options: {
-                banner: "/*\n* grrd's Puzzle\n* Copyright (c) 2012 Gerard Tyedmers, grrd@gmx.net\n* Licensed under the MPL License\n*/\n",
-                mangle: true,
-                compress: true
-            },
+        terser: {
+            one: {
+                options: {
+                    compress: true,
+                    mangle: true,
+                    output: {
+                        comments: 'some'
+                    }
+                },
                 files: {
                     '../../2_Build/Puzzle/Scripts/puzzle.js': ['Scripts/puzzle.js']
                 }
-            },
-            two: {
+            }
+        },
+        uglify: {
+            one: {
                 options: {
                     banner: "/*\n* grrd's Puzzle\n* Copyright (c) 2012 Gerard Tyedmers, grrd@gmx.net\n* Licensed under the MPL License\n*/\n",
                     mangle: true,
@@ -23,7 +28,7 @@ module.exports = function(grunt) {
                     '../../2_Build/Puzzle/sw.js': ['sw.js']
                 }
             },
-            three: {
+            two: {
                 options: {
                     banner: "/*\n* Copyright (c) 2011-2013 Fabien Cazenave, Mozilla.\n*/\n",
                     mangle: true,
@@ -33,7 +38,7 @@ module.exports = function(grunt) {
                     '../../2_Build/Puzzle/Scripts/l10n.js': ['Scripts/l10n.js']
                 }
             },
-            four: {
+            three: {
                 options: {
                     banner: "/*\n* Javascript EXIF Reader 0.1.4\n* Copyright (c) 2008 Jacob Seidelin, cupboy@gmail.com, http://blog.nihilogic.dk/\n* Licensed under the MIT License (MIT) [https://github.com/exif-js/exif-js/blob/master/LICENSE.md]\n*/\n",
                     mangle: true,
@@ -59,6 +64,7 @@ module.exports = function(grunt) {
                     {'../../2_Build/Puzzle/Images/bullets1.svg': 'Images/bullets1.svg'},
                     {'../../2_Build/Puzzle/Images/bullets1o.svg': 'Images/bullets1o.svg'},
                     {'../../2_Build/Puzzle/Images/dice.svg': 'Images/dice.svg'},
+                    {'../../2_Build/Puzzle/Images/down.svg': 'Images/down.svg'},
                     {'../../2_Build/Puzzle/Images/easy.svg': 'Images/easy.svg'},
                     {'../../2_Build/Puzzle/Images/easy_gold.svg': 'Images/easy_gold.svg'},
                     {'../../2_Build/Puzzle/Images/hard.svg': 'Images/hard.svg'},
@@ -72,11 +78,13 @@ module.exports = function(grunt) {
                     {'../../2_Build/Puzzle/Images/medium.svg': 'Images/medium.svg'},
                     {'../../2_Build/Puzzle/Images/medium_gold.svg': 'Images/medium_gold.svg'},
                     {'../../2_Build/Puzzle/Images/next.svg': 'Images/next.svg'},
+                    {'../../2_Build/Puzzle/Images/ok.svg': 'Images/ok.svg'},
                     {'../../2_Build/Puzzle/Images/photo.svg': 'Images/photo.svg'},
                     {'../../2_Build/Puzzle/Images/prev.svg': 'Images/prev.svg'},
                     {'../../2_Build/Puzzle/Images/puzzle.svg': 'Images/puzzle.svg'},
                     {'../../2_Build/Puzzle/Images/settings.svg': 'Images/settings.svg'},
-                    {'../../2_Build/Puzzle/Images/tictactoe.svg': 'Images/tictactoe.svg'}
+                    {'../../2_Build/Puzzle/Images/tictactoe.svg': 'Images/tictactoe.svg'},
+                    {'../../2_Build/Puzzle/Images/x.svg': 'Images/x.svg'}
                 ]
             }
         },
@@ -193,7 +201,6 @@ module.exports = function(grunt) {
                     {expand: true, src: ['Locales/**'], dest: '../../2_Build/Puzzle/'},
                     {expand: true, flatten: true, src: ['Manifest/*'], dest: '../../2_Build/Puzzle/Manifest/'},
                     {expand: true, flatten: true, src: ['Images/*.ico'], dest: '../../2_Build/Puzzle/Images/'},
-                    {expand: true, flatten: true, src: ['Scripts/jquery*.*'], dest: '../../2_Build/Puzzle/Scripts/'},
                     {expand: true, flatten: true, src: ['Scripts/swipe*.*'], dest: '../../2_Build/Puzzle/Scripts/'},
                     {expand: true, flatten: true, src: ['Scripts/kinetic*.*'], dest: '../../2_Build/Puzzle/Scripts/'},
                     {expand: true, flatten: true, src: ['Sounds/*'], dest: '../../2_Build/Puzzle/Sounds/'},
@@ -212,6 +219,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('default', [
+        'terser',
         'uglify',
         'svgmin',
         //'imagemin',

@@ -134,7 +134,8 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 0.5vmin 2px #000;
     text-shadow: 1px 1px 2px #500000;
-    background-image: linear-gradient(#ff0142, #830110), linear-gradient(#ffbabc, #e33a33 12px, #55010a 100%);
+    background-image: linear-gradient(#9999ff, #6666ff),
+    linear-gradient(#e6e6ff, #6666ff 12px, #00004d 100%);
     background-origin: border-box;
     background-clip: content-box, border-box;
     padding: 1px;
@@ -185,6 +186,10 @@ header {
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
 }
+.select-button:last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
 .list-button-33, .list-button-33-sel {
     width: calc(100% / 3);
     position: relative;
@@ -206,7 +211,6 @@ nav, .mini-buttonlist {
 nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     border-radius: 10px;
     box-shadow: 0 0 0.5vmin 2px #111;
-    overflow: hidden;
 }
 #navOff, #nav0 {
     width: min-content;
@@ -215,7 +219,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
 }
 .dropdown {
     max-height: 0;
-    transition: max-height 0.5s ease-out, opacity 0s 0.5s;;
+    transition: max-height 0.5s ease-out, opacity 0s 0.5s;
     overflow: hidden;
     background: #d5d5d5;
     opacity: 0;
@@ -233,13 +237,16 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     background-image: linear-gradient(#202020, #2c2c2c), linear-gradient(#222, #111 calc(100% - 10px), #aaa 100%);
 }
 .selected {
-    background-image: linear-gradient(#ff0142, #830110), linear-gradient(#ffbabc, #e33a33 12px, #55010a 100%);
+    background-image: linear-gradient(#9999ff, #6666ff),
+    linear-gradient(#e6e6ff, #6666ff 12px, #00004d 100%);
 }
 .button:hover, .selected:hover {
-    background-image: linear-gradient(#ff2162, #931120), linear-gradient(#ffcacc, #f34a43 12px, #65111a 100%);
+    background-image: linear-gradient(#b3b3ff, #7c7cff),
+    linear-gradient(#ffffff, #7c7cff 12px, #000080 100%);
 }
 .button:active, .selected:active {
-    background-image: linear-gradient(#830110, #de0139), linear-gradient(#55010a, #e33a33 calc(100% - 12px), #ffbabc 100%);;
+    background-image: linear-gradient(#6666ff, #9999ff),
+    linear-gradient(#000080, #7c7cff calc(100% - 12px), #ffffff 100%);
 }
 .close-button {
     border-radius: 25px;
@@ -410,17 +417,17 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     height: 40px;
 }
 a:link {
-    color: #ee1149;
+    color: #7c7cff;
     font-weight: bold;
 }
 a:visited {
-    color: #de0139;
+    color: #6666ff;
 }
 a:hover {
-    color: #ff2162;
+    color: #9999ff;
 }
 a:active {
-    color: #ff2162;
+    color: #9999ff;
 }
 .w25 {
     width: calc(25% - 4px);
@@ -573,7 +580,8 @@ p.alert { margin-top:3px; }
     left: -10%;
 }
 .tgl-skewed:checked + .tgl-btn {
-    background: linear-gradient(#ff0142, #830110), linear-gradient(#fff, #e33a33 50%, #55010a 100%);
+    background-image: linear-gradient(#9999ff, #6666ff),
+    linear-gradient(#e6e6ff, #6666ff 12px, #00004d 100%);
 }
 .tgl-skewed:checked + .tgl-btn:before {
     left: -100%;

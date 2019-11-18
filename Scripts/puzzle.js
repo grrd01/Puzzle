@@ -213,6 +213,11 @@
         var tween;
         var j;
         fHidePopup($popupHelp);
+        setTimeout(function() {
+            $("iCloseHelp").classList.remove("dn");
+            $imgHelp.style.height = null;
+            $imgHelp.style.padding = null;
+        }, 500);
         $title.classList.remove("swipe-out-right");
         $game.classList.remove("swipe-in-left");
         $title.classList.add("swipe-out");
@@ -516,8 +521,11 @@
         }
         g_buildPuzzle = true;
 
-        $imgHelp.src = "Images/piece_gold.png";
+        $imgHelp.src = "Images/loading.svg";
+        $imgHelp.style.height = "70px";
+        $imgHelp.style.padding = "5px";
         $help.innerHTML = document.webL10n.get("lb_load");
+        $("iCloseHelp").classList.add("dn");
         fShowPopup($popupHelp);
         g_back_g_grid = $b_back_g_grid.checked;
         g_back_g_image = $b_back_g_image.checked;
@@ -923,10 +931,9 @@
         }
     }
 
-    function setGold(gold) {
-        // todo ? $b_gold.val(gold).slider("refresh");
+    function setGold() {
         if (localStorageOK) {
-            localStorage.setItem("s_gold", $b_gold.checked);
+            localStorage.setItem("s_gold", ($b_gold.checked? "on" : "off"));
         }
         if ($b_gold.checked === true) {
             g_gold = true;
@@ -982,18 +989,14 @@
         }
         if (l_sumLevel === 36) {
             $b_gold_enabled.style.display = "block";
-            setGold("on");
-            //$b_gold.slider({theme: "d"}).slider("refresh");
+            $b_gold.checked = true;
+            setGold();
             $b_gold_disabled.style.display = "none";
-            //$b_gold.removeAttr("disabled").slider("refresh");
-
         } else {
             $b_gold_disabled.style.display = "block";
-            setGold("off");
-            //$b_gold.slider({theme: "d"}).slider("refresh");
+            $b_gold.checked = false;
+            setGold();
             $b_gold_enabled.style.display = "none";
-            //$b_gold.attr("disabled", "disabled").slider("refresh");
-
         }
     }
 
@@ -1223,12 +1226,6 @@
         // todo ? $select_theme_img.attr("style", "width:60px; float:left;"); // to ensure repaint on ios
     }
 
-    /* todo
-    $b_gold.on("change", function () {
-        setGold($b_gold.val());
-    });
-     */
-
     function setImage() {
         Array.from(event.target.parentNode.getElementsByClassName("list-button-33-sel")).forEach(function (rButton) {
             rButton.classList.remove("selected");
@@ -1308,11 +1305,16 @@
                 fHidePopup($popupHelp);
             });
             $popupHelp.addEventListener("click", function () {
-                fHidePopup($popupHelp);
+                if (!$("iCloseHelp").classList.contains("dn")) {
+                    fHidePopup($popupHelp);
+                }
             });
             $("bt_theme").addEventListener("click", function () {
                 document.getElementsByClassName("dropdown")[0].classList.toggle("show");
                 document.getElementsByClassName("icon")[0].classList.toggle("rotate");
+            });
+            $b_gold.addEventListener('change', (event) => {
+                setGold();
             });
 
             g_image_slider = new Swipe(document.getElementById("image_slider"), {
@@ -1411,7 +1413,8 @@
                 $b_back_g_image.checked = true;
                 $b_rotate.checked = false;
                 $b_sound.checked = true;
-                setGold("off");
+                $b_gold.checked = false;
+                setGold();
                 setTheme("animals");
             } else {
                 //localStorage.clear();
@@ -1436,9 +1439,11 @@
                     $b_sound.checked = (localStorage.getItem("s_sound") === "on");
                 }
                 if (localStorage.getItem("s_gold") === null) {
-                    setGold("off");
+                    $b_gold.checked = false;
+                    setGold();
                 } else {
-                    setGold(localStorage.getItem("s_gold"));
+                    $b_gold.checked = (localStorage.getItem("s_gold") === "on");
+                    setGold();
                 }
                 if (localStorage.getItem("s_theme") === null) {
                     setTheme("animals");

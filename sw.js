@@ -27,6 +27,7 @@ var urlsToCache = [
     "Images/hard.svg",
     "Images/hard_gold.svg",
     "Images/info.svg",
+    "Images/loading.svg",
     "Images/lock.svg",
     "Images/mail.svg",
     "Images/medal1.svg",

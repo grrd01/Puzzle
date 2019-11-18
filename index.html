@@ -80,10 +80,10 @@
             <br>
             <nav id="navOff" class="own-nav">
                 <div class="list-button selected" data-num="0">
-                    <img id="imageOff" class="own-img" src="Images/photo.svg" alt="play with your own image">
+                    <img id="imageOff" class="own-img button-img" src="Images/photo.svg" alt="play with your own image">
                 </div>
-                <br>
             </nav>
+            <br>
         </div>
 
         <div id='image_slider' class='swipe w100 online'>
@@ -99,16 +99,16 @@
                 <div class="db">
                     <nav id="nav1">
                         <div class="list-button list-button-33-sel selected" data-num="1">
-                            <img id="image1-1" class="button-img" src="Images/dummy.png" alt="">
+                            <img id="image1-1" class="button-img" src="Images/loading.svg" alt="">
                             <img id="medal1-1" class="medal" src="Images/medal1.svg" alt=""/>
                         </div>
                         <div class="list-button list-button-33-sel" data-num="2">
-                            <img id="image1-2" class="button-img" src="Images/dummy.png" alt="">
+                            <img id="image1-2" class="button-img" src="Images/loading.svg" alt="">
                             <img id="lock1-2" class="lock" src="Images/lock.svg" alt=""/>
                             <img id="medal1-2" class="medal" src="Images/medal1.svg" alt=""/>
                         </div>
                         <div class="list-button list-button-33-sel" data-num="3">
-                            <img id="image1-3" class="button-img" src="Images/dummy.png" alt="">
+                            <img id="image1-3" class="button-img" src="Images/loading.svg" alt="">
                             <img id="lock1-3" class="lock" src="Images/lock.svg" alt=""/>
                             <img id="medal1-3" class="medal" src="Images/medal1.svg" alt=""/>
                         </div>
@@ -204,17 +204,19 @@
             <div id="iInfoBody" class="popup-body">
                 <table>
                     <tr>
-                        <td class="img"><img id="s_grrd" src="Images/puzzle.svg" alt="puzzle" class="w80"/></td>
-                        <td class="text"><span data-l10n-id="lb_thanks">Thanks for playing grrd's Puzzle.</span>
-                            <span data-l10n-id="lb_orient">Change your device between vertical and horizontal orientation for different images.</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="pt10"><span data-l10n-id="lb_dev">Developed by Gérard Tyedmers with </span>
+                        <td colspan="2" class="pt10">
+                            <span data-l10n-id="lb_thanks">Thanks for playing grrd's Puzzle.</span>
+                            <span data-l10n-id="lb_dev">Developed by Gérard Tyedmers with </span>
                             <a href="http://kineticjs.com/" target="_blank" rel="noopener">kinetics.js</a>,
                             <a href="https://github.com/thebird/swipe" target="_blank" rel="noopener">swipe.js</a>
                             <span data-l10n-id="lb_and"> and </span> <a href="https://github.com/jseidelin/exif-js" target="_blank" rel="noopener">exif.js</a>.<br><br>
                             <span id="s_mascha" data-l10n-id="lb_for">For Masha<br><br></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="img"><img id="s_grrd" src="Images/puzzle.svg" alt="puzzle" class="w80"/></td>
+                        <td class="text">
+                            <span data-l10n-id="lb_orient">Change your device between vertical and horizontal orientation for different images.</span>
                         </td>
                     </tr>
                     <tr>
@@ -303,7 +305,7 @@
                     <div data-role="popup" id="popupTheme" data-history="false" class="dn">
                         <ul data-role="listview">
                             <li><a href="#">
-                                <img id="t_europe2" src="Images/dummy.png" alt="europe">
+                                <img id="t_europe2" src="Images/loading.svg" alt="europe">
                                 <h2 data-l10n-id="lb_europe" class="pt10">Europe</h2></a>
                             </li>
                         </ul>
@@ -353,7 +355,7 @@
                     </div>
                 </div>
                 <div class="popup-content" id="b_gold_disabled">
-                    <span data-l10n-id="lb_gold">Gold Mode</span>
+                    <span data-l10n-id="lb_gold" class="locked">Gold Mode</span>
                     <div class="fr">
                         <input class="tgl tgl-skewed" id="b_gold2" type="checkbox" disabled/>
                         <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="b_gold2"></label>

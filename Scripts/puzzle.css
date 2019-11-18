@@ -479,6 +479,7 @@ p.alert { margin-top:3px; }
 .fl {float: left;}
 .db {display: block;}
 .dn {display: none;}
+.cb {clear: both;}
 .w50 {width: 50px;}
 .w60 {width: 60px;}
 .w80 {width: 80%;}

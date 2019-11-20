@@ -448,6 +448,10 @@ a:active {
     transform: rotate(180deg);
     transition: transform 0.25s ease-in;
 }
+.txticon {
+    float: left;
+    height: 20px;
+}
 
 
 /* altes original-css */
@@ -493,7 +497,7 @@ p.alert { margin-top:3px; }
     .own-img {height: calc((33vw - 50px) * 1.5); width: auto;}
 }
 @media (orientation: landscape) {
-    #img_title {max-height: calc(100vw / 5);}
+    #img_title {max-height: calc(100vh / 5); margin-left: 5px;}
     .lock {position: absolute; left: 25%; bottom: calc((100vw - 70px) / 30); width: 50%; min-width: 25px; pointer-events: none;}
     .own-img {height: calc((33vw - 50px) / 1.5); width: auto;}
 }

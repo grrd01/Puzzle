@@ -7,7 +7,7 @@
 /*jslint devel: true, browser: true */ /*global  self  */
 
 var CACHE_NAME = "grrds-puzzle-cache";
-var CACHE_VERSION = "v2.03";
+var CACHE_VERSION = "v2.04";
 var CACHE = CACHE_NAME + "-" + CACHE_VERSION;
 
 var urlsToCache = [
@@ -38,7 +38,7 @@ var urlsToCache = [
     "Images/next.svg",
     "Images/ok.svg",
     "Images/photo.svg",
-    "Images/piece_gold.png",
+    "Images/piece_gold.svg",
     "Images/prev.svg",
     "Images/puzzle.svg",
     "Images/settings.svg",

@@ -1532,7 +1532,7 @@
             $("imageOff").setAttribute("alt", document.webL10n.get("lb_image"));
             $("image0-1").setAttribute("alt", document.webL10n.get("lb_image"));
             if (!g_canvas_supported) {
-                $imgHelp.src = "Images/piece_gold.png";
+                $imgHelp.src = "Images/piece_gold.svg";
                 $help.innerHTML = document.webL10n.get("lb_html5");
                 fShowPopup($popupHelp);
             }

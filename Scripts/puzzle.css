@@ -272,9 +272,12 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     padding: 1px 0 1px 0;
     display: inline-block;
 }
-.list-button:active > img {
+.list-button:active > img:first-child {
     margin-top: 12px;
     margin-bottom: 8px;
+}
+.list-button:active .medal {
+    position: absolute; right: 5px; bottom: -7px;
 }
 .mini-button:active > img {
     margin-top: 7px;
@@ -489,16 +492,22 @@ p.alert { margin-top:3px; }
 .w80 {width: 80%;}
 .w100 {width: 100%;}
 .grey {color: #999999;}
-.medal {position: absolute; right: 5px; bottom: -5px; width: 20%; min-width: 25px;}
+.medal {position: absolute; right: 5px; bottom: -5px; width: 20%; min-width: 25px;pointer-events: none;}
 
 @media (orientation: portrait) {
     #img_title {width: 100%;}
     .lock {position: absolute; left: 10%; bottom: calc((100vw - 70px) / 9.8); width: 80%; min-width: 25px; pointer-events: none;}
+    .list-button:active .lock {
+        position: absolute; left: 10%; bottom: calc(((100vw - 70px) / 9.8) - 2px);
+    }
     .own-img {height: calc((33vw - 50px) * 1.5); width: auto;}
 }
 @media (orientation: landscape) {
     #img_title {max-height: calc(100vh / 5); margin-left: 5px;}
     .lock {position: absolute; left: 25%; bottom: calc((100vw - 70px) / 30); width: 50%; min-width: 25px; pointer-events: none;}
+    .list-button:active .lock {
+        position: absolute; left: 25%; bottom: calc(((100vw - 70px) / 30) - 2px);
+    }
     .own-img {height: calc((33vw - 50px) / 1.5); width: auto;}
 }
 .locked {opacity: 0.3;}

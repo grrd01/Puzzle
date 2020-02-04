@@ -46,6 +46,7 @@ var urlsToCache = [
     "Images/title1.png",
     "Images/title_wide.png",
     "Images/x.svg",
+    "Images/africa/theme.png",
     "Images/america/theme.png",
     "Images/animals/theme.png",
     "Images/asia/theme.png",

@@ -157,11 +157,11 @@ module.exports = function(grunt) {
                 options: {
                     patterns: [
                         {
-                            match: /dn t_shrek/g,
-                            replacement: 't_shrek'
+                            match: /select-button dn/g,
+                            replacement: 'select-button'
                         },
                         {
-                            match: /dn t_mascha/g,
+                            match: /t_mascha dn/g,
                             replacement: 't_mascha'
                         },
                         {

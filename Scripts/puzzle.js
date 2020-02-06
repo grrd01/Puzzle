@@ -1314,7 +1314,7 @@
                 document.getElementsByClassName("dropdown")[0].classList.toggle("show");
                 document.getElementsByClassName("icon")[0].classList.toggle("rotate");
             });
-            $b_gold.addEventListener('change', (event) => {
+            $b_gold.addEventListener('change', (ignore) => {
                 setGold();
             });
 
@@ -1529,7 +1529,9 @@
             document.documentElement.lang = document.webL10n.getLanguage().substr(0, 2);
             document.querySelector("meta[name='description']").setAttribute("content", document.webL10n.get("lb_desc"));
             document.querySelector("link[rel='manifest']").href = "Manifest/appmanifest_" + document.webL10n.getLanguage().substr(0, 2) + ".json";
-            document.querySelector("link[rel='canonical']").href = "https://grrd01.github.io/Puzzle/?lang=" + document.webL10n.getLanguage().substr(0, 2);
+            if (document.querySelector("link[rel='canonical']")) {
+                document.querySelector("link[rel='canonical']").href = "https://grrd01.github.io/Puzzle/?lang=" + document.webL10n.getLanguage().substr(0, 2);
+            }
             $("select_theme").innerHTML = document.webL10n.get("lb_" + g_theme);
             $("imageOff").setAttribute("alt", document.webL10n.get("lb_image"));
             $("image0-1").setAttribute("alt", document.webL10n.get("lb_image"));

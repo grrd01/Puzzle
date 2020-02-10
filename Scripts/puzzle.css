@@ -200,6 +200,7 @@ header {
     vertical-align: middle;
     pointer-events: none;
     width: calc(100% - 40px);
+    max-height: calc(80vh - 200px);
 }
 .mini-button, .close-button {
     padding: 1px;
@@ -253,7 +254,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     border-radius: 25px;
     width: 25px;
     height: 25px;
-    margin: 5px 5px 20px 5px;
+    margin: 5px 5px 15px 5px;
 }
 .close-popup {
     float: right;
@@ -503,8 +504,12 @@ p.alert { margin-top:3px; }
     .own-img {height: calc((33vw - 50px) * 1.5); width: auto;}
 }
 @media (orientation: landscape) {
-    #img_title {max-height: calc(100vh / 5); margin-left: 5px;}
-    .lock {position: absolute; left: 25%; bottom: calc((100vw - 70px) / 30); width: 50%; min-width: 25px; pointer-events: none;}
+    #img_title {
+        max-height: 20vh;
+        min-height: 42px;
+        margin-left: 5px;
+    }
+    .lock {position: absolute; left: 25%; top: 0; bottom: 0; margin: auto; width: 50%; min-width: 25px; pointer-events: none; max-height: calc(80vh - 220px);}
     .list-button:active .lock {
         position: absolute; left: 25%; bottom: calc(((100vw - 70px) / 30) - 2px);
     }

@@ -67,6 +67,8 @@ module.exports = function(grunt) {
                     {'../../2_Build/Puzzle/Images/down.svg': 'Images/down.svg'},
                     {'../../2_Build/Puzzle/Images/easy.svg': 'Images/easy.svg'},
                     {'../../2_Build/Puzzle/Images/easy_gold.svg': 'Images/easy_gold.svg'},
+                    {'../../2_Build/Puzzle/Images/escfullscreen.svg': 'Images/escfullscreen.svg'},
+                    {'../../2_Build/Puzzle/Images/fullscreen.svg': 'Images/fullscreen.svg'},
                     {'../../2_Build/Puzzle/Images/hard.svg': 'Images/hard.svg'},
                     {'../../2_Build/Puzzle/Images/hard_gold.svg': 'Images/hard_gold.svg'},
                     {'../../2_Build/Puzzle/Images/info.svg': 'Images/info.svg'},

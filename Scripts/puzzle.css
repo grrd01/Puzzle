@@ -272,6 +272,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     height: 40px;
     padding: 1px 0 1px 0;
     display: inline-block;
+    margin-left: 1px;
 }
 .list-button:active > img:first-child {
     margin-top: 12px;

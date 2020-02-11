@@ -7,7 +7,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-/*jslint browser:true, for:true, this: true, devel: true, long: true, esversion: 6 */
+/*jslint browser:true, for:true, this: true, devel: true, long: true */
 /*global Kinetic, window, EXIF, FileReader, Swipe, MozActivity */
 
 
@@ -87,6 +87,7 @@
     var $b_image_input = $("b_image_input");
     var $popupInfo = $("iPopupInfo");
     var $popupSettings = $("iPopupSettings");
+    var $fullScreen = $("iFullscreen");
     var $popupHelp = $("iPopupHelp");
     var $imgHelp = $("img_help");
     var $help = $("lb_help");
@@ -137,6 +138,28 @@
                 //console.log("ServiceWorker registration failed: ", err);
             });
         });
+    }
+
+    function toggleFullScreen() {
+        var doc = window.document;
+        var docEl = doc.documentElement;
+
+        var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+        if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+            requestFullScreen.call(docEl);
+        } else {
+            cancelFullScreen.call(doc);
+        }
+    }
+
+    function setFullScreenIcon() {
+        if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+            $("img_fullscreen").src = "Images/escfullscreen.svg";
+        } else {
+            $("img_fullscreen").src = "Images/fullscreen.svg";
+        }
     }
 
     /**
@@ -1224,9 +1247,7 @@
         if (localStorageOK) {
             localStorage.setItem("s_theme", theme);
         }
-        // todo ? $select_theme_img.attr("style", "width:59px; float:left;"); // to ensure repaint on ios
         content_formatting();
-        // todo ? $select_theme_img.attr("style", "width:60px; float:left;"); // to ensure repaint on ios
     }
 
     function setImage() {
@@ -1305,6 +1326,26 @@
             $("iSettingsClose").addEventListener("click", function () {
                 fHidePopup($popupSettings);
             });
+            $fullScreen.addEventListener("click", function () {
+                toggleFullScreen();
+            });
+
+            if (
+                !(
+                    document.fullscreenEnabled || /* FullScreen supported, Standard syntax */
+                    document.webkitFullscreenEnabled || /* Chrome, Safari and Opera syntax */
+                    document.mozFullScreenEnabled ||/* Firefox syntax */
+                    document.msFullscreenEnabled/* IE/Edge syntax */
+                ) || (
+                    navigator.standalone === true || /* FullScreen not already enabled */
+                    document.fullscreenElement || /* Standard syntax */
+                    document.webkitFullscreenElement || /* Chrome, Safari and Opera syntax */
+                    document.mozFullScreenElement ||/* Firefox syntax */
+                    document.msFullscreenElement /* IE/Edge syntax */
+                )
+            ) {
+                 $fullScreen.parentNode.removeChild($fullScreen);
+            }
             $("iCloseHelp").addEventListener("click", function () {
                 fHidePopup($popupHelp);
             });
@@ -1317,7 +1358,7 @@
                 document.getElementsByClassName("dropdown")[0].classList.toggle("show");
                 document.getElementsByClassName("icon")[0].classList.toggle("rotate");
             });
-            $b_gold.addEventListener('change', (ignore) => {
+            $b_gold.addEventListener("change", (ignore) => {
                 setGold();
             });
 
@@ -1492,6 +1533,22 @@
 
     window.addEventListener("resize", function () {
         content_formatting();
+    });
+    /* Standard syntax */
+    document.addEventListener("fullscreenchange", function() {
+        setFullScreenIcon();
+    });
+    /* Firefox */
+    document.addEventListener("mozfullscreenchange", function() {
+        setFullScreenIcon();
+    });
+    /* Chrome, Safari and Opera */
+    document.addEventListener("webkitfullscreenchange", function() {
+        setFullScreenIcon();
+    });
+    /* IE / Edge */
+    document.addEventListener("msfullscreenchange", function() {
+        setFullScreenIcon();
     });
 
     navigator.sayswho = (function () {

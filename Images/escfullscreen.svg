@@ -1,0 +1,35 @@
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="74" height="74" style="fill: none; stroke: white; stroke-width: 3.8; stroke-linejoin: round; ">
+  <path transform="translate(33 33) rotate(180)" d="M5 5
+           L25 5
+           L19 11
+           L29 21
+           L21 29
+           L11 19
+           L5 25
+           Z" />
+  <path transform='translate(41 33) rotate(-90)' d="M5 5
+           L25 5
+           L19 11
+           L29 21
+           L21 29
+           L11 19
+           L5 25
+           Z" />
+  <path transform='translate(33 41) rotate(90)' d="M5 5
+           L25 5
+           L19 11
+           L29 21
+           L21 29
+           L11 19
+           L5 25
+           Z" />
+  <path transform='translate(41 41)' d="M5 5
+           L25 5
+           L19 11
+           L29 21
+           L21 29
+           L11 19
+           L5 25
+           Z" />
+</svg>
+  

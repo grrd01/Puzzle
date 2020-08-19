@@ -1,4 +1,4 @@
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="222px" height="222px" viewBox="0 -18 222 204" stroke="#fff" fill="none" stroke-width="10" stroke-linecap="round">
+<svg xmlns="http://www.w3.org/2000/svg" width="222px" height="222px" viewBox="0 -18 222 204" stroke="#fff" fill="none" stroke-width="10" stroke-linecap="round">
     <style>
         svg {animation: spinner 4s infinite;}
         @keyframes spinner {

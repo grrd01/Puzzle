@@ -7,7 +7,7 @@
 /*jslint devel: true, browser: true */ /*global  self  */
 
 var CACHE_NAME = "grrds-puzzle-cache";
-var CACHE_VERSION = "v2.07";
+var CACHE_VERSION = "v2.08";
 var CACHE = CACHE_NAME + "-" + CACHE_VERSION;
 
 var urlsToCache = [

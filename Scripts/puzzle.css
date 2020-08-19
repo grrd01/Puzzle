@@ -40,6 +40,7 @@ header {
 #game {
     transform: translateX(100vw);
     opacity: 0;
+    visibility: hidden;
 }
 .swipe-in {
     animation-name: swipe-in;
@@ -51,14 +52,17 @@ header {
     0% {
         transform: translateX(100vw);
         opacity: 0;
+        visibility: hidden;
     }
     1% {
         transform: translateX(100vw);
         opacity: 1;
+        visibility: visible;
     }
     100% {
         transform: translateX(0);
         opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -72,14 +76,17 @@ header {
     0% {
         transform: translateX(0);
         opacity: 1;
+        visibility: visible;
     }
     99% {
         transform: translateX(-100vw);
         opacity: 1;
+        visibility: visible;
     }
     100% {
         transform: translateX(-100vw);
         opacity: 0;
+        visibility: hidden;
     }
 }
 .swipe-in-left {
@@ -92,14 +99,17 @@ header {
     0% {
         transform: translateX(0);
         opacity: 1;
+        visibility: visible;
     }
     99% {
         transform: translateX(100vw);
         opacity: 1;
+        visibility: visible;
     }
     100% {
         transform: translateX(100vw);
         opacity: 0;
+        visibility: hidden;
     }
 }
 
@@ -113,14 +123,17 @@ header {
     0% {
         transform: translateX(-100vw);
         opacity: 0;
+        visibility: hidden;
     }
     1% {
         transform: translateX(-100vw);
         opacity: 1;
+        visibility: visible;
     }
     100% {
         transform: translateX(0);
         opacity: 1;
+        visibility: visible;
     }
 }
 .top-right {
@@ -221,15 +234,17 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
 }
 .dropdown {
     max-height: 0;
-    transition: max-height 0.5s ease-out, opacity 0s 0.5s;
+    transition: max-height 0.5s ease-out, opacity 0s 0.5s, visibility 0s 0.5s;
     overflow: hidden;
     background: #d5d5d5;
     opacity: 0;
+    visibility: hidden;
 }
 .dropdown.show {
     max-height: 720px;
     transition: max-height 0.75s ease-in;
     opacity: 1;
+    visibility: visible;
 }
 
 .list-button:hover, .mini-button:hover, .close-button:hover, .select-button:hover {
@@ -495,6 +510,10 @@ p.alert { margin-top:3px; }
 .w100 {width: 100%;}
 .grey {color: #999999;}
 .medal {position: absolute; right: 5px; bottom: -5px; width: 20%; min-width: 25px;pointer-events: none;}
+.locked {opacity: 0.3;}
+.shadow {
+    filter: drop-shadow( 2px 2px 2px #111);
+}
 
 @media (orientation: portrait) {
     #img_title {width: 100%;}
@@ -516,7 +535,6 @@ p.alert { margin-top:3px; }
     }
     .own-img {height: calc((33vw - 50px) / 1.5); width: auto;}
 }
-.locked {opacity: 0.3;}
 
 /* Toggle-Button */
 .tgl {

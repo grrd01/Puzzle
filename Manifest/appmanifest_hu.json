@@ -54,6 +54,12 @@
       "src": "../Images/g_icon_512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "../Images/g_icon_maskable.png",
+      "type": "image/png",
+      "sizes": "500x500",
+      "purpose": "maskable"
     }
   ],
   "background_color": "#434343",

@@ -194,6 +194,23 @@
             : ratio;
     }
 
+    // returns a promise that resolves to true  if the browser automatically
+    // rotates images based on exif data and false otherwise
+    function fBrowserAutoRotates () {
+        return new Promise((resolve, reject) => {
+            // load an image with exif rotation and see if the browser rotates it
+            const image = new Image();
+            image.onload = () => {
+                resolve(image.naturalWidth === 1);
+            };
+            image.onerror = reject;
+            // this jpeg is 2x1 with orientation=6 so it should rotate to 1x2
+            image.src = "data:image/jpeg;base64,/9j/4QBiRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAYAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAAITAAMAAAABAAEAAAAAAAAAAABIAAAAAQAAAEgAAAAB/9sAQwAEAwMEAwMEBAMEBQQEBQYKBwYGBgYNCQoICg8NEBAPDQ8OERMYFBESFxIODxUcFRcZGRsbGxAUHR8dGh8YGhsa/9sAQwEEBQUGBQYMBwcMGhEPERoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoa/8IAEQgAAQACAwERAAIRAQMRAf/EABQAAQAAAAAAAAAAAAAAAAAAAAf/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAF/P//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQUCf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Bf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEABj8Cf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8hf//aAAwDAQACAAMAAAAQH//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQMBAT8Qf//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQIBAT8Qf//EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAT8Qf//Z";
+        });
+    }
+
+    const bAutorotate = fBrowserAutoRotates();
+
     function buildBackground(img) {
         var l_back_g_image;
         var n;
@@ -1190,9 +1207,12 @@
         // Closure to capture the file information.
         reader.onload = (function () {
             return function (e) {
+                g_own_orientation = 0;
                 g_own_image = e.target.result;
                 EXIF.getData(evt.target.files[0], function () {
-                    g_own_orientation = EXIF.getTag(this, "Orientation");
+                    if (!bAutorotate) {
+                        g_own_orientation = EXIF.getTag(this, "Orientation");
+                    }
                 });
                 $("image0-1").src = g_own_image;
                 $("imageOff").src = g_own_image;

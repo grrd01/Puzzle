@@ -118,11 +118,13 @@
     }());
 
     function fShowPopup(e) {
+        document.getElementsByTagName("FIELDSET")[0].disabled = true;
         e.classList.remove("popup-init");
         e.classList.remove("popup-hide");
         e.classList.add("popup-show");
     }
     function fHidePopup(e) {
+        document.getElementsByTagName("FIELDSET")[0].disabled = false;
         e.classList.remove("popup-show");
         e.classList.add("popup-hide");
         setTimeout(function(){
@@ -1303,6 +1305,12 @@
         } else {
             $("bullets4").src = "Images/bullets0.svg";
         }
+        Array.from($("slider_container").getElementsByTagName("BUTTON")).forEach(function(node) {
+            node.disabled = true;
+        });
+        Array.from($("nav" + g_image_slider.getPos()).getElementsByTagName("BUTTON")).forEach(function(node) {
+            node.disabled = false;
+        });
     }
 
     function urlQuery(query) {
@@ -1544,6 +1552,7 @@
                 $b_prev.style.display = "none";
                 $b_next.style.display = "none";
             }
+            slide();
             content_formatting();
             setTimeout(function () {
                 content_formatting();
@@ -1570,6 +1579,34 @@
     document.addEventListener("msfullscreenchange", function() {
         setFullScreenIcon();
     });
+
+    document.onkeydown = function (e) {
+        // mit Pfeiltasten navigieren
+        switch (e.key) {
+            case "ArrowLeft":
+                if (document.getElementsByClassName("popup-show").length === 0) {
+                    g_image_slider.prev();
+                    slide();
+                }
+                break;
+            case "ArrowRight":
+                if (document.getElementsByClassName("popup-show").length === 0) {
+                    g_image_slider.next();
+                    slide();
+                }
+                break;
+            case "Escape":
+                if (document.getElementsByClassName("popup-show").length > 0) {
+                    fHidePopup($popupInfo);
+                    fHidePopup($popupSettings);
+                    fHidePopup($popupHelp);
+                } else if ($game.classList.contains("swipe-in") === true) {
+                    g_ready = false;
+                    back(false);
+                }
+                break;
+        }
+    }
 
     navigator.sayswho = (function () {
         var N = navigator.appName;

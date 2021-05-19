@@ -30,9 +30,15 @@ body {
     bottom: 0;
     background: linear-gradient(#444, #222);
 }
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: grid;
+}
 header {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 0;
 }
 .content {
     margin: 5px;
@@ -141,6 +147,18 @@ header {
     top: 10px;
     right: 10px;
 }
+button {
+    color: white;
+    font-size: 0;
+}
+
+button > span {
+    font-size: large;
+    display: block;
+}
+button:focus {
+    outline: none;
+}
 .button {
     float: right;
     border:  1px transparent;
@@ -152,17 +170,14 @@ header {
     background-origin: border-box;
     background-clip: content-box, border-box;
     padding: 1px;
-    height: 40px;
-    width: 100px;
+    height: 42px;
+    width: 102px;
     cursor: pointer;
     text-align: center;
     font-weight: bold;
 }
-.button-span {
-    margin-top: 8px;
-}
 .button-span:active {
-    margin-top: 10px;
+    margin-top: 3px;
 }
 .button-span > img {
     margin-bottom: -3px;
@@ -178,10 +193,10 @@ header {
 .list-button, .select-button {
     text-align: center;
     padding: 1px 0 1px 0;
-    margin-left: 1px;
 }
 .list-button {
     display: inline-block;
+    margin-left: 1px;
 }
 .list-button:first-child, .mini-buttonlist > .mini-button:first-child {
     border-top-left-radius: 10px;
@@ -202,6 +217,9 @@ header {
 .select-button:last-child {
     border-bottom-right-radius: inherit;
     border-bottom-left-radius: inherit;
+}
+.select-button {
+    width: 100%;
 }
 .list-button-33, .list-button-33-sel {
     width: calc(100% / 3);
@@ -247,7 +265,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     visibility: visible;
 }
 
-.list-button:hover, .mini-button:hover, .close-button:hover, .select-button:hover {
+.list-button:hover, .mini-button:hover, .close-button:hover, .select-button:hover, .list-button:focus, .mini-button:focus, .close-button:focus, .select-button:focus {
     background-image: linear-gradient(#555555, #383838), linear-gradient(#ccc, #555 10px, #222 100%);
 }
 .list-button:active, .mini-button:active, .close-button:active, .select-button:active {
@@ -257,7 +275,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     background-image: linear-gradient(#9999ff, #6666ff),
     linear-gradient(#e6e6ff, #6666ff 12px, #00004d 100%);
 }
-.button:hover, .selected:hover {
+.button:hover, .selected:hover, .button:focus, .selected:focus {
     background-image: linear-gradient(#b3b3ff, #7c7cff),
     linear-gradient(#ffffff, #7c7cff 12px, #000080 100%);
 }
@@ -267,9 +285,9 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
 }
 .close-button {
     border-radius: 25px;
-    width: 25px;
-    height: 25px;
-    margin: 5px 5px 15px 5px;
+    width: 27px;
+    height: 27px;
+    margin: 5px 5px 10px 5px;
 }
 .close-popup {
     float: right;
@@ -280,11 +298,11 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     margin: 2px;
 }
 #b_prev > img, #b_next > img {
-    margin-top: 5px;
+    margin-top: 0;
 }
 .mini-button {
-    width: 59px;
-    height: 40px;
+    width: 60px;
+    height: 42px;
     padding: 1px 0 1px 0;
     display: inline-block;
     margin-left: 1px;
@@ -305,7 +323,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     margin-bottom: 8px;
 }
 #b_prev:active > img, #b_next:active > img {
-    margin-top: 7px;
+    margin-top: 5px;
     margin-bottom: 3px;
 }
 .close-button:active > img {
@@ -444,8 +462,9 @@ a:link {
 a:visited {
     color: #6666ff;
 }
-a:hover {
+a:hover, a:focus {
     color: #9999ff;
+    outline: none;
 }
 a:active {
     color: #9999ff;
@@ -538,7 +557,8 @@ p.alert { margin-top:3px; }
 
 /* Toggle-Button */
 .tgl {
-    display: none;
+    opacity: 0;
+    position: absolute;
 }
 .tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
     box-sizing: border-box;
@@ -630,4 +650,12 @@ p.alert { margin-top:3px; }
 }
 .tgl-skewed:checked + .tgl-btn:active:after {
     left: 10%;
+}
+.tgl-skewed:checked:hover + .tgl-btn, .tgl-skewed:checked:focus + .tgl-btn {
+    background-image: linear-gradient(#b3b3ff, #7c7cff),
+    linear-gradient(#ffffff, #7c7cff 12px, #000080 100%);
+}
+.tgl-skewed:not(:checked):hover + .tgl-btn, .tgl-skewed:not(:checked):focus + .tgl-btn {
+    background: linear-gradient(#bbb, #666),
+    linear-gradient(#ddd, #666 10px, #333 100%);
 }

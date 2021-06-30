@@ -176,8 +176,8 @@ button:focus {
     text-align: center;
     font-weight: bold;
 }
-.button-span:active {
-    margin-top: 3px;
+.button:active > .button-span {
+    margin-top: 5px;
 }
 .button-span > img {
     margin-bottom: -3px;

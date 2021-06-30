@@ -263,6 +263,7 @@
             $imgHelp.style.height = null;
             $imgHelp.style.padding = null;
         }, 500);
+        document.getElementsByTagName("FIELDSET")[0].disabled = true;
         $title.classList.remove("swipe-out-right");
         $game.classList.remove("swipe-in-left");
         $title.classList.add("swipe-out");
@@ -1093,6 +1094,7 @@
                 }
             }
         }
+        document.getElementsByTagName("FIELDSET")[0].disabled = false;
         $title.classList.remove("swipe-out");
         $game.classList.remove("swipe-in");
         $title.classList.add("swipe-out-right");

@@ -1349,6 +1349,7 @@
                     $("t_mascha").src = "Images/mascha/theme.png";
                     $("t_mascha2").src = "Images/mascha2/theme.png";
                     $("t_mascha3").src = "Images/mascha3/theme.png";
+                    $("t_mascha4").src = "Images/mascha4/theme.png";
                     $("t_shrek").src = "Images/shrek/theme.png";
                 }
                 fShowPopup($popupSettings);

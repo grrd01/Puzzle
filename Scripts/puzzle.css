@@ -259,7 +259,7 @@ nav, .mini-buttonlist, .close-button, .xs, .dropdown, .select {
     visibility: hidden;
 }
 .dropdown.show {
-    max-height: 720px;
+    max-height: 780px;
     transition: max-height 0.75s ease-in;
     opacity: 1;
     visibility: visible;

@@ -119,6 +119,8 @@
 
     function fShowPopup(e) {
         document.getElementsByTagName("FIELDSET")[0].disabled = true;
+        // Fix for Firefox OnKeydown
+        document.activeElement.blur();
         e.classList.remove("popup-init");
         e.classList.remove("popup-hide");
         e.classList.add("popup-show");

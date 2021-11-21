@@ -1283,28 +1283,30 @@
         event.target.classList.add("selected");
     }
 
-    function slide() {
-        if (g_image_slider.getPos() === 0) {
+    function slide(pos) {
+        if (pos === 0) {
             $("bullets0").src = "Images/bullets1o.svg";
         } else {
             $("bullets0").src = "Images/bullets0o.svg";
         }
-        if (g_image_slider.getPos() === 1) {
+        if (pos === 1) {
             $("bullets1").src = "Images/bullets1.svg";
         } else {
             $("bullets1").src = "Images/bullets0.svg";
+            g_imageset = 4;
+            content_formatting();
         }
-        if (g_image_slider.getPos() === 2) {
+        if (pos === 2) {
             $("bullets2").src = "Images/bullets1.svg";
         } else {
             $("bullets2").src = "Images/bullets0.svg";
         }
-        if (g_image_slider.getPos() === 3) {
+        if (pos === 3) {
             $("bullets3").src = "Images/bullets1.svg";
         } else {
             $("bullets3").src = "Images/bullets0.svg";
         }
-        if (g_image_slider.getPos() === 4) {
+        if (pos === 4) {
             $("bullets4").src = "Images/bullets1.svg";
         } else {
             $("bullets4").src = "Images/bullets0.svg";
@@ -1398,33 +1400,7 @@
             g_image_slider = new Swipe(document.getElementById("image_slider"), {
                 startSlide: 1,
                 callback: function (ignore, pos) {
-                    if (pos === 0) {
-                        $("bullets0").src = "Images/bullets1o.svg";
-                    } else {
-                        $("bullets0").src = "Images/bullets0o.svg";
-                    }
-                    if (pos === 1) {
-                        $("bullets1").src = "Images/bullets1.svg";
-                    } else {
-                        $("bullets1").src = "Images/bullets0.svg";
-                        g_imageset = 4;
-                        content_formatting();
-                    }
-                    if (pos === 2) {
-                        $("bullets2").src = "Images/bullets1.svg";
-                    } else {
-                        $("bullets2").src = "Images/bullets0.svg";
-                    }
-                    if (pos === 3) {
-                        $("bullets3").src = "Images/bullets1.svg";
-                    } else {
-                        $("bullets3").src = "Images/bullets0.svg";
-                    }
-                    if (pos === 4) {
-                        $("bullets4").src = "Images/bullets1.svg";
-                    } else {
-                        $("bullets4").src = "Images/bullets0.svg";
-                    }
+                    slide(pos);
                 }
             });
             document.getElementById("b_image_input").addEventListener("change", handleFileSelect, false);
@@ -1435,12 +1411,10 @@
             });
             $b_prev.addEventListener("click", function (e) {
                 g_image_slider.prev();
-                slide();
                 e.preventDefault();
             });
             $b_next.addEventListener("click", function (e) {
                 g_image_slider.next();
-                slide();
                 e.preventDefault();
             });
             $bt_easy.addEventListener("click", function () {
@@ -1557,7 +1531,7 @@
                 $b_prev.style.display = "none";
                 $b_next.style.display = "none";
             }
-            slide();
+            slide(1);
             content_formatting();
             setTimeout(function () {
                 content_formatting();
@@ -1591,13 +1565,11 @@
             case "ArrowLeft":
                 if (document.getElementsByClassName("popup-show").length === 0) {
                     g_image_slider.prev();
-                    slide();
                 }
                 break;
             case "ArrowRight":
                 if (document.getElementsByClassName("popup-show").length === 0) {
                     g_image_slider.next();
-                    slide();
                 }
                 break;
             case "Escape":

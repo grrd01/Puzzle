@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    '../../2_Build/Puzzle/Scripts/puzzle.js': ['Scripts/puzzle.js']
+                    'dist/Scripts/puzzle.js': ['Scripts/puzzle.js']
                 }
             }
         },
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    '../../2_Build/Puzzle/sw.js': ['sw.js']
+                    'dist/sw.js': ['sw.js']
                 }
             },
             two: {
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    '../../2_Build/Puzzle/Scripts/l10n.js': ['Scripts/l10n.js']
+                    'dist/Scripts/l10n.js': ['Scripts/l10n.js']
                 }
             },
             three: {
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    '../../2_Build/Puzzle/Scripts/exif.js': ['Scripts/exif.js']
+                    'dist/Scripts/exif.js': ['Scripts/exif.js']
                 }
             }
         },
@@ -58,39 +58,39 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: [
-                    {'../../2_Build/Puzzle/Images/4inarow.svg': 'Images/4inarow.svg'},
-                    {'../../2_Build/Puzzle/Images/bullets0.svg': 'Images/bullets0.svg'},
-                    {'../../2_Build/Puzzle/Images/bullets0o.svg': 'Images/bullets0o.svg'},
-                    {'../../2_Build/Puzzle/Images/bullets1.svg': 'Images/bullets1.svg'},
-                    {'../../2_Build/Puzzle/Images/bullets1o.svg': 'Images/bullets1o.svg'},
-                    {'../../2_Build/Puzzle/Images/dice.svg': 'Images/dice.svg'},
-                    {'../../2_Build/Puzzle/Images/down.svg': 'Images/down.svg'},
-                    {'../../2_Build/Puzzle/Images/easy.svg': 'Images/easy.svg'},
-                    {'../../2_Build/Puzzle/Images/easy_gold.svg': 'Images/easy_gold.svg'},
-                    {'../../2_Build/Puzzle/Images/escfullscreen.svg': 'Images/escfullscreen.svg'},
-                    {'../../2_Build/Puzzle/Images/fullscreen.svg': 'Images/fullscreen.svg'},
-                    {'../../2_Build/Puzzle/Images/hard.svg': 'Images/hard.svg'},
-                    {'../../2_Build/Puzzle/Images/hard_gold.svg': 'Images/hard_gold.svg'},
-                    {'../../2_Build/Puzzle/Images/info.svg': 'Images/info.svg'},
-                    {'../../2_Build/Puzzle/Images/loading.svg': 'Images/loading.svg'},
-                    {'../../2_Build/Puzzle/Images/lock.svg': 'Images/lock.svg'},
-                    {'../../2_Build/Puzzle/Images/mail.svg': 'Images/mail.svg'},
-                    {'../../2_Build/Puzzle/Images/medal1.svg': 'Images/medal1.svg'},
-                    {'../../2_Build/Puzzle/Images/medal2.svg': 'Images/medal2.svg'},
-                    {'../../2_Build/Puzzle/Images/medal3.svg': 'Images/medal3.svg'},
-                    {'../../2_Build/Puzzle/Images/medium.svg': 'Images/medium.svg'},
-                    {'../../2_Build/Puzzle/Images/medium_gold.svg': 'Images/medium_gold.svg'},
-                    {'../../2_Build/Puzzle/Images/memo.svg': 'Images/memo.svg'},
-                    {'../../2_Build/Puzzle/Images/next.svg': 'Images/next.svg'},
-                    {'../../2_Build/Puzzle/Images/ok.svg': 'Images/ok.svg'},
-                    {'../../2_Build/Puzzle/Images/photo.svg': 'Images/photo.svg'},
-                    {'../../2_Build/Puzzle/Images/piece_gold.svg': 'Images/piece_gold.svg'},
-                    {'../../2_Build/Puzzle/Images/prev.svg': 'Images/prev.svg'},
-                    {'../../2_Build/Puzzle/Images/puzzle.svg': 'Images/puzzle.svg'},
-                    {'../../2_Build/Puzzle/Images/reversi.svg': 'Images/reversi.svg'},
-                    {'../../2_Build/Puzzle/Images/settings.svg': 'Images/settings.svg'},
-                    {'../../2_Build/Puzzle/Images/tictactoe.svg': 'Images/tictactoe.svg'},
-                    {'../../2_Build/Puzzle/Images/x.svg': 'Images/x.svg'}
+                    {'dist/Images/4inarow.svg': 'Images/4inarow.svg'},
+                    {'dist/Images/bullets0.svg': 'Images/bullets0.svg'},
+                    {'dist/Images/bullets0o.svg': 'Images/bullets0o.svg'},
+                    {'dist/Images/bullets1.svg': 'Images/bullets1.svg'},
+                    {'dist/Images/bullets1o.svg': 'Images/bullets1o.svg'},
+                    {'dist/Images/dice.svg': 'Images/dice.svg'},
+                    {'dist/Images/down.svg': 'Images/down.svg'},
+                    {'dist/Images/easy.svg': 'Images/easy.svg'},
+                    {'dist/Images/easy_gold.svg': 'Images/easy_gold.svg'},
+                    {'dist/Images/escfullscreen.svg': 'Images/escfullscreen.svg'},
+                    {'dist/Images/fullscreen.svg': 'Images/fullscreen.svg'},
+                    {'dist/Images/hard.svg': 'Images/hard.svg'},
+                    {'dist/Images/hard_gold.svg': 'Images/hard_gold.svg'},
+                    {'dist/Images/info.svg': 'Images/info.svg'},
+                    {'dist/Images/loading.svg': 'Images/loading.svg'},
+                    {'dist/Images/lock.svg': 'Images/lock.svg'},
+                    {'dist/Images/mail.svg': 'Images/mail.svg'},
+                    {'dist/Images/medal1.svg': 'Images/medal1.svg'},
+                    {'dist/Images/medal2.svg': 'Images/medal2.svg'},
+                    {'dist/Images/medal3.svg': 'Images/medal3.svg'},
+                    {'dist/Images/medium.svg': 'Images/medium.svg'},
+                    {'dist/Images/medium_gold.svg': 'Images/medium_gold.svg'},
+                    {'dist/Images/memo.svg': 'Images/memo.svg'},
+                    {'dist/Images/next.svg': 'Images/next.svg'},
+                    {'dist/Images/ok.svg': 'Images/ok.svg'},
+                    {'dist/Images/photo.svg': 'Images/photo.svg'},
+                    {'dist/Images/piece_gold.svg': 'Images/piece_gold.svg'},
+                    {'dist/Images/prev.svg': 'Images/prev.svg'},
+                    {'dist/Images/puzzle.svg': 'Images/puzzle.svg'},
+                    {'dist/Images/reversi.svg': 'Images/reversi.svg'},
+                    {'dist/Images/settings.svg': 'Images/settings.svg'},
+                    {'dist/Images/tictactoe.svg': 'Images/tictactoe.svg'},
+                    {'dist/Images/x.svg': 'Images/x.svg'}
                 ]
             }
         },
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'Images',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: '../../2_Build/Puzzle/Images/'
+                    dest: 'dist/Images/'
                 }]
             },
             dist2: {
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'Scripts/images',
                     src: ['*.{png,jpg,gif}'],
-                    dest: '../../2_Build/Puzzle/Scripts/images/'
+                    dest: 'dist/Scripts/images/'
                 }]
             }
         },
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
                     banner: "/*\n* grrd's Puzzle\n* Copyright (c) 2012 Gerard Tyedmers, grrd@gmx.net\n* Licensed under the MPL License\n*/\n"
                 },
                 files: {
-                    '../../2_Build/Puzzle/Scripts/puzzle.css': ['Scripts/puzzle.css']
+                    'dist/Scripts/puzzle.css': ['Scripts/puzzle.css']
                 }
             }
         },
@@ -137,7 +137,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     src: 'index.html',
-                    dest: '../../2_Build/Puzzle'
+                    dest: 'dist'
                 }]
             }
         },
@@ -154,7 +154,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: ['../../2_Build/Puzzle/index.html'], dest: '../../2_Build/Puzzle/'}
+                    {expand: true, flatten: true, src: ['dist/index.html'], dest: 'dist/'}
                 ]
             },
             dist2: {
@@ -193,7 +193,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: ['../../2_Build/Puzzle/index.html'], dest: '../../2_Build/Puzzle/',
+                    {expand: true, flatten: true, src: ['dist/index.html'], dest: 'dist/',
                         rename: function(dest, src) {
                             return dest + src.replace('index.html','shrek.html');
                         }
@@ -204,14 +204,15 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, src: ['Locales/**'], dest: '../../2_Build/Puzzle/'},
-                    {expand: true, flatten: true, src: ['Manifest/*'], dest: '../../2_Build/Puzzle/Manifest/'},
-                    {expand: true, flatten: true, src: ['Images/*.ico'], dest: '../../2_Build/Puzzle/Images/'},
-                    {expand: true, flatten: true, src: ['Scripts/swipe*.*'], dest: '../../2_Build/Puzzle/Scripts/'},
-                    {expand: true, flatten: true, src: ['Scripts/kinetic*.*'], dest: '../../2_Build/Puzzle/Scripts/'},
-                    {expand: true, flatten: true, src: ['Sounds/*'], dest: '../../2_Build/Puzzle/Sounds/'},
-                    {expand: true, flatten: true, src: ['**.txt'], dest: '../../2_Build/Puzzle/'},
-                    {expand: true, flatten: true, src: ['**.md'], dest: '../../2_Build/Puzzle/'}
+                    {expand: true, src: ['Locales/**'], dest: 'dist/'},
+                    {expand: true, flatten: true, src: ['Manifest/*'], dest: 'dist/Manifest/'},
+                    {expand: true, flatten: true, src: ['Images/*.ico'], dest: 'dist/Images/'},
+                    {expand: true, flatten: true, src: ['Scripts/swipe*.*'], dest: 'dist/Scripts/'},
+                    {expand: true, flatten: true, src: ['Scripts/kinetic*.*'], dest: 'dist/Scripts/'},
+                    {expand: true, flatten: true, src: ['Sounds/*'], dest: 'dist/Sounds/'},
+                    {expand: true, flatten: true, src: ['**.txt'], dest: 'dist/'},
+                    {expand: true, flatten: true, src: ['**.md'], dest: 'dist/'},
+                    {expand: true, flatten: true, src: ['CNAME'], dest: 'dist/'}
                 ]
             }
         }

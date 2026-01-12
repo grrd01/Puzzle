@@ -10,9 +10,9 @@
   "devDependencies": {
     "grunt": "^1.5.3",
     "load-grunt-tasks": "^5.1.0",
-    "grunt-svgmin": "^6.0.0",
-    "grunt-contrib-imagemin": "^3.1.0",
-    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-svgmin": "^6.0.1",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
     "grunt-contrib-htmlmin": "^3.1.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-terser": "^1.0.0",
